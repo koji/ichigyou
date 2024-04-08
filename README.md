@@ -1,5 +1,8 @@
 # typescript one liners
 
+one liners in TypeScript.
+This will be a npm package (probably).
+
 ### object property check
 
 if an object has a key, the function returns true.
