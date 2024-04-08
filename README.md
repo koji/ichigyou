@@ -1,7 +1,7 @@
 # typescript one liners
 
 one liners in TypeScript.
-This will be a npm package (probably).
+This will be a npm package (probably) when there are more than 20 one liners.
 
 ### object property check
 
