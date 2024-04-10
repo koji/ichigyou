@@ -1,7 +1,5 @@
-# typescript one liners
-
-one liners in TypeScript.
-This will be a npm package (probably) when there are more than 20 one liners.
+# ichogyou (1行)
+`ichigyou` is a list of typescript one liners
 
 ### object property check
 
