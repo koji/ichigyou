@@ -103,3 +103,11 @@ console.log(reverseString('javascript')) // output "tpircsavaj"
 ```ts
 const moveToTop = () => window.scrollTo(0, 0)
 ```
+
+### numeric check for string
+
+```ts
+const isNumeric = (str: string): boolean => !isNaN(Number(str))
+console.log(isNumeric('2')) // output true
+console.log(isNumeric('typescript')) // output false
+```
