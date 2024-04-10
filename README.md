@@ -1,4 +1,6 @@
-![2024-04-09_08-40-16_8714](https://github.com/koji/ichigyou/assets/474225/41f6b766-ce0f-432a-9d0e-49e459a1b1be)
+<div>
+<img src="https://github.com/koji/ichigyou/assets/474225/41f6b766-ce0f-432a-9d0e-49e459a1b1be" width="500" />
+</div>
 
 # ichogyou (1行)
 `ichigyou` is a list of typescript one liners
