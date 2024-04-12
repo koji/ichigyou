@@ -1,0 +1,35 @@
+{
+  "name": "ichigyou",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "vitest"
+  },
+  "email": "kojikoji@skiff.com",
+  "keywords": [
+    "tsup",
+    "npm",
+    "template",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.8",
+    "vitest": "^1.5.0"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts"
+}
