@@ -84,6 +84,8 @@ console.log(reverseString('javascript')) // output "tpircsavaj"
 
 ### numeric check for string
 
+this function checks string is numeric or not.
+
 ```ts
 console.log(isNumeric('2')) // output true
 console.log(isNumeric('typescript')) // output false
