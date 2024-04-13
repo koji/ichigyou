@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "strict": true,
+    "declaration": true,
+    "outDir": "./dist",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
