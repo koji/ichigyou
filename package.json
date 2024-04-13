@@ -4,8 +4,9 @@
   "description": "one liner functions in typescript",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "test": "vitest"
+    "build": "vite build && tsc",
+    "test": "vitest",
+    "doc": "typedoc --entryPointStrategy expand ./src"
   },
   "email": "kojikoji@skiff.com",
   "keywords": [
@@ -18,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "typedoc": "^0.25.13",
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
     "vitest": "^1.5.0"
