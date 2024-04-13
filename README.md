@@ -6,6 +6,9 @@
 
 `ichigyo` is a list of typescript one liners
 
+TSDoc of `ichigyo`
+https://koji.github.io/ichigyo/index.html
+
 ### object property check
 
 if an object has a key, the function returns true.
