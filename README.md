@@ -2,9 +2,9 @@
 <img src="https://github.com/koji/ichigyou/assets/474225/41f6b766-ce0f-432a-9d0e-49e459a1b1be" width="500" />
 </div>
 
-# ichogyou (1 行)
+# ichogyo (1 行)
 
-`ichigyou` is a list of typescript one liners
+`ichigyo` is a list of typescript one liners
 
 ### object property check
 
