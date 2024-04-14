@@ -11,14 +11,14 @@ jobs:
         with:
           node-version: 18
 
-       - name: Install pnpm
+      - name: Install pnpm
         run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Run test
-      - run: pnpm run test
+        run: pnpm run test
 
   publish-npm:
     needs: build
