@@ -10,8 +10,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm ci
-      - run: npm test
+
+       - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run test
+      - run: pnpm run test
 
   publish-npm:
     needs: build
