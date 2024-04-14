@@ -1,6 +1,6 @@
 {
   "name": "ichigyou",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "one liner functions in typescript",
   "scripts": {
     "dev": "vite",
