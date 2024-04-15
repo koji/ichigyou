@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { first, last, removeDuplicated, arrToString } from '../array'
+import { first, last, removeDuplicated, arrToString, findIndex } from '../array'
 
 const mockStrArr = ['a', 'b', 'c', 'd']
 const mocNumberArr = [1, 0, 3, 6, 9, 8]
@@ -79,5 +79,33 @@ describe('arrToString', () => {
   it('should handle empty arrays', () => {
     const result = arrToString([])
     expect(result).to.equal('')
+  })
+})
+
+describe('findIndex', () => {
+  it('should return the correct index when the element is in the array number', () => {
+    const arr = [1, 2, 3, 4, 5]
+    const element = 3
+    const result = findIndex(arr, element)
+    expect(result).to.equal(2)
+  })
+
+  it('should return -1 when the element is not in the array', () => {
+    const arr = [1, 2, 3, 4, 5]
+    const element = 6
+    const result = findIndex(arr, element)
+    expect(result).to.equal(-1)
+  })
+
+  it('should return the correct index when the element is in the array string', () => {
+    const arr = ['a', 'v', 'd', 'y', 'e']
+    const element = 'e'
+    const result = findIndex(arr, element)
+    expect(result).to.equal(4)
+  })
+
+  it('should return the correct index when the element is in the array object', () => {
+    const result = findIndex(mockObjArr, mockTwo)
+    expect(result).to.equal(1)
   })
 })
