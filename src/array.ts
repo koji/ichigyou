@@ -34,3 +34,21 @@ export const first = (arr: Array<any>) => arr[0]
  * ```
  */
 export const arrToString = (arr: Array<any>) => arr.join(',')
+
+/**
+ * Finds the index of a given element in an array.
+ *
+ * @param arr - The array in which to find the element.
+ * @param element - The element to find.
+ * @returns The index of the element in the array, or -1 if the element is not found.
+ *
+ * @example
+ * ```typescript
+ * const arr = [1, 2, 3, 4, 5];
+ * const element = 3;
+ * const index = findIndex(arr, element);
+ * console.log(index); // 2
+ * ```
+ */
+export const findIndex = <T>(arr: T[], element: T): number =>
+  arr.indexOf(element)
