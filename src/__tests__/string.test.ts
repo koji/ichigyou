@@ -1,6 +1,12 @@
 import { describe, it, expect } from 'vitest'
 
-import { isEmptyString, countWords, reverseString, isNumeric } from '../string'
+import {
+  countWords,
+  isEmptyString,
+  isNumeric,
+  reverseString,
+  toTitleCase,
+} from '../string'
 
 describe('isEmptyString', () => {
   it('should return true for an empty string', () => {
@@ -56,5 +62,22 @@ describe('isNumeric', () => {
 
   it('should return false for empty strings', () => {
     expect(isNumeric('')).toBe(false)
+  })
+})
+
+describe('toTitleCase', () => {
+  it('should return the correct title case for a single word', () => {
+    const result = toTitleCase('hello')
+    expect(result).to.equal('Hello')
+  })
+
+  it('should return the correct title case for multiple words', () => {
+    const result = toTitleCase('hello world')
+    expect(result).to.equal('Hello World')
+  })
+
+  it('should handle empty strings', () => {
+    const result = toTitleCase('')
+    expect(result).to.equal('')
   })
 })
