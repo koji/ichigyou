@@ -1,6 +1,13 @@
 import { describe, it, expect } from 'vitest'
 
-import { findMax, findMin, sortNumAsc, randomNum, sortNumDesc } from '../number'
+import {
+  findMax,
+  findMin,
+  minsToHoursAndMins,
+  randomNum,
+  sortNumAsc,
+  sortNumDesc,
+} from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
 
@@ -62,5 +69,22 @@ describe('randomNum', () => {
       expect(frequency).toBeGreaterThan(0.08) // 8% lower bound
       expect(frequency).toBeLessThan(0.12) // 12% upper bound
     })
+  })
+})
+
+describe('minsToHoursAndMins', () => {
+  it('should return the correct hours and minutes for a given number of minutes', () => {
+    const result = minsToHoursAndMins(90)
+    expect(result).to.deep.equal({ hours: 1, minutes: 30 })
+  })
+
+  it('should return 0 hours and 0 minutes for 0 minutes', () => {
+    const result = minsToHoursAndMins(0)
+    expect(result).to.deep.equal({ hours: 0, minutes: 0 })
+  })
+
+  it('should handle minutes that are not a multiple of 60', () => {
+    const result = minsToHoursAndMins(65)
+    expect(result).to.deep.equal({ hours: 1, minutes: 5 })
   })
 })
