@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { first, last, removeDuplicated } from '../array'
+import { first, last, removeDuplicated, arrToString } from '../array'
 
 const mockStrArr = ['a', 'b', 'c', 'd']
 const mocNumberArr = [1, 0, 3, 6, 9, 8]
@@ -62,5 +62,22 @@ describe('removeDuplicated', () => {
     const mockNumArr = [1, 2, 3, 4, 9, 1, 4]
     const result = removeDuplicated(mockNumArr)
     expect(result).toEqual([1, 2, 3, 4, 9])
+  })
+})
+
+describe('arrToString', () => {
+  it('should return the correct string for an array of strings', () => {
+    const result = arrToString(['hello', 'world'])
+    expect(result).to.equal('hello,world')
+  })
+
+  it('should return the correct string for an array of numbers', () => {
+    const result = arrToString([1, 2, 3])
+    expect(result).to.equal('1,2,3')
+  })
+
+  it('should handle empty arrays', () => {
+    const result = arrToString([])
+    expect(result).to.equal('')
   })
 })
