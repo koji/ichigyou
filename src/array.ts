@@ -20,3 +20,17 @@ export const last = (arr: Array<any>) => arr[arr.length - 1]
  * @returns The first element of the array.
  */
 export const first = (arr: Array<any>) => arr[0]
+
+/**
+ * Converts an array to a string.
+ *
+ * @param arr - The array to be converted.
+ * @returns The input array converted to a string, with elements separated by commas.
+ *
+ * @example
+ * ```typescript
+ * const result = arrToString(['hello', 'world']);
+ * console.log(result); // 'hello,world'
+ * ```
+ */
+export const arrToString = (arr: Array<any>) => arr.join(',')
