@@ -27,3 +27,18 @@ export const reverseString = (str: string) => str.split('').reverse().join('')
  */
 export const isNumeric = (str: string): boolean =>
   str.length === 0 ? false : !isNaN(Number(str))
+
+/**
+ * Converts a string to title case.
+ *
+ * @param str - The string to be converted.
+ * @returns The input string converted to title case.
+ *
+ * @example
+ * ```typescript
+ * const result = toTitleCase('hello world');
+ * console.log(result); // 'Hello World'
+ * ```
+ */
+export const toTitleCase = (str: string): string =>
+  str.replace(/\b\w/g, (match) => match.toUpperCase())
