@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest'
-import { first, last, removeDuplicated, arrToString, findIndex } from '../array'
+import {
+  first,
+  last,
+  removeDuplicated,
+  arrToString,
+  findIndex,
+  isSorted,
+} from '../array'
 
 const mockStrArr = ['a', 'b', 'c', 'd']
 const mocNumberArr = [1, 0, 3, 6, 9, 8]
@@ -107,5 +114,27 @@ describe('findIndex', () => {
   it('should return the correct index when the element is in the array object', () => {
     const result = findIndex(mockObjArr, mockTwo)
     expect(result).to.equal(1)
+  })
+})
+
+describe('isSorted', () => {
+  it('should return true for an array sorted in ascending order', () => {
+    const arr = [1, 2, 3, 4, 5]
+    expect(isSorted(arr, 'asc')).toBe(true)
+  })
+
+  it('should return false for an array not sorted in ascending order', () => {
+    const arr = [5, 4, 3, 2, 1]
+    expect(isSorted(arr, 'asc')).toBe(false)
+  })
+
+  it('should return true for an array sorted in descending order', () => {
+    const arr = [5, 4, 3, 2, 1]
+    expect(isSorted(arr, 'desc')).toBe(true)
+  })
+
+  it('should return false for an array not sorted in descending order', () => {
+    const arr = [1, 2, 3, 4, 5]
+    expect(isSorted(arr, 'desc')).toBe(false)
   })
 })
