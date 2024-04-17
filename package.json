@@ -1,6 +1,6 @@
 {
   "name": "ichigyou",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "one liner functions in typescript",
   "scripts": {
     "dev": "vite",
@@ -8,7 +8,19 @@
     "test": "vitest",
     "doc": "typedoc --entryPointStrategy expand ./src"
   },
-  "email": "kojikoji@skiff.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koji/ichigyou.git"
+  },
+  "author": {
+    "name": "koji kanao",
+    "email": "kojikoji@skiff.com"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/koji/ichigyou/issues"
+  },
+  "homepage": "https://koji.github.io/ichigyou/",
   "keywords": [
     "npm",
     "template",
@@ -16,8 +28,6 @@
     "vite",
     "vitest"
   ],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "typedoc": "^0.25.13",
     "typescript": "^5.4.4",
