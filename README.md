@@ -7,7 +7,7 @@
 `ichigyo` is a list of typescript one liners
 
 TSDoc of `ichigyo`
-https://koji.github.io/ichigyo/index.html
+https://koji.github.io/ichigyou/index.html
 
 ## how to use
 
