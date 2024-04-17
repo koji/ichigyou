@@ -52,3 +52,20 @@ export const arrToString = (arr: Array<any>) => arr.join(',')
  */
 export const findIndex = <T>(arr: T[], element: T): number =>
   arr.indexOf(element)
+
+/**
+ * Checks if an array is sorted in ascending or descending order.
+ *
+ * @param {T[]} arr - The array to check.
+ * @param {SortType} sortType - The type of sort ('asc' or 'desc').
+ * @returns {boolean} Returns true if the array is sorted according to the sortType, otherwise false.
+ */
+type SortType = 'asc' | 'desc'
+export const isSorted = <T>(arr: T[], sortType: SortType) =>
+  sortType === 'asc'
+    ? arr.every(
+        (element: T, index: number) => index === 0 || element > arr[index - 1]
+      )
+    : arr.every(
+        (element: T, index: number) => index === 0 || element < arr[index - 1]
+      )
