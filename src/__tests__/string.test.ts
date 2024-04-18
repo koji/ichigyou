@@ -6,6 +6,7 @@ import {
   isNumeric,
   reverseString,
   toTitleCase,
+  truncateString,
 } from '../string'
 
 describe('isEmptyString', () => {
@@ -79,5 +80,24 @@ describe('toTitleCase', () => {
   it('should handle empty strings', () => {
     const result = toTitleCase('')
     expect(result).to.equal('')
+  })
+})
+
+describe('truncateString', () => {
+  it("truncates a string to a specified maximum length and appends '...' if the string was truncated", () => {
+    expect(truncateString('Hello, world!', 5)).toBe('Hello...')
+    expect(truncateString('TypeScript is awesome!', 10)).toBe('TypeScript...')
+    expect(
+      truncateString(
+        'This is a really long string that needs to be truncated.',
+        20
+      )
+    ).toBe('This is a really lon...')
+  })
+
+  it('returns the original string if it was shorter than the maximum length', () => {
+    expect(truncateString('Hello, world!', 50)).toBe('Hello, world!')
+    expect(truncateString('TypeScript', 20)).toBe('TypeScript')
+    expect(truncateString('Short string', 20)).toBe('Short string')
   })
 })

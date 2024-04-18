@@ -7,6 +7,7 @@ import {
   randomNum,
   sortNumAsc,
   sortNumDesc,
+  average,
 } from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
@@ -86,5 +87,17 @@ describe('minsToHoursAndMins', () => {
   it('should handle minutes that are not a multiple of 60', () => {
     const result = minsToHoursAndMins(65)
     expect(result).to.deep.equal({ hours: 1, minutes: 5 })
+  })
+})
+
+describe('average', () => {
+  it('returns the average of an array of numbers', () => {
+    expect(average([1, 2, 3, 4, 5])).toBe(3)
+    expect(average([10, 20, 30, 40, 50])).toBe(30)
+    expect(average([-1, -2, -3, -4, -5])).toBe(-3)
+  })
+
+  it('returns NaN for an empty array', () => {
+    expect(average([])).toBeNaN()
   })
 })
