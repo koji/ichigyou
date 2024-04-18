@@ -69,3 +69,12 @@ export const isSorted = <T>(arr: T[], sortType: SortType) =>
     : arr.every(
         (element: T, index: number) => index === 0 || element < arr[index - 1]
       )
+
+/**
+ * Removes a specific element from an array.
+ * @param arr - The array from which to remove the element.
+ * @param element - The element to remove.
+ * @returns A new array with the specified element removed.
+ */
+export const removeElement = <T>(arr: T[], element: T) =>
+  arr.filter((elm: T) => elm !== element)

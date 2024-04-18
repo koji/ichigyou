@@ -42,3 +42,12 @@ export const isNumeric = (str: string): boolean =>
  */
 export const toTitleCase = (str: string): string =>
   str.replace(/\b\w/g, (match) => match.toUpperCase())
+
+/**
+ * Truncates a string to a specified maximum length and appends '...' if the string was truncated.
+ * @param str - The string to truncate.
+ * @param maxLength - The maximum length of the string after truncation.
+ * @returns The truncated string, or the original string if it was shorter than the maximum length.
+ */
+export const truncateString = (str: string, maxLength: number) =>
+  str.length > maxLength ? `${str.slice(0, maxLength)}...` : str

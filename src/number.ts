@@ -56,3 +56,11 @@ export const minsToHoursAndMins = (mins: number): HoursAndMinutes => ({
   hours: Math.floor(mins / 60),
   minutes: mins % 60,
 })
+
+/**
+ * Calculates the average of an array of numbers.
+ * @param arr - The array of numbers.
+ * @returns The average of the array of numbers.
+ */
+export const average = (arr: number[]) =>
+  arr.reduce((acc: number, val: number) => acc + val, 0) / arr.length

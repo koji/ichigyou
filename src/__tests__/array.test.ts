@@ -6,6 +6,7 @@ import {
   arrToString,
   findIndex,
   isSorted,
+  removeElement,
 } from '../array'
 
 const mockStrArr = ['a', 'b', 'c', 'd']
@@ -136,5 +137,30 @@ describe('isSorted', () => {
   it('should return false for an array not sorted in descending order', () => {
     const arr = [1, 2, 3, 4, 5]
     expect(isSorted(arr, 'desc')).toBe(false)
+  })
+})
+
+describe('removeElement', () => {
+  it('removes the specified element from an array', () => {
+    expect(removeElement([1, 2, 3, 4, 5], 3)).toEqual([1, 2, 4, 5])
+    expect(removeElement(['a', 'b', 'c', 'd', 'e'], 'c')).toEqual([
+      'a',
+      'b',
+      'd',
+      'e',
+    ])
+    expect(removeElement([true, false, true], true)).toEqual([false])
+  })
+
+  it('returns the original array if the element is not found', () => {
+    expect(removeElement([1, 2, 3, 4, 5], 6)).toEqual([1, 2, 3, 4, 5])
+    expect(removeElement(['a', 'b', 'c', 'd', 'e'], 'f')).toEqual([
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+    ])
+    expect(removeElement([true, false, true], false)).toEqual([true, true])
   })
 })
