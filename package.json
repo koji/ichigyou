@@ -1,6 +1,6 @@
 {
   "name": "ichigyou",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "one liner functions in typescript",
   "scripts": {
     "dev": "vite",
@@ -23,7 +23,10 @@
   "homepage": "https://koji.github.io/ichigyou/",
   "keywords": [
     "npm",
-    "template",
+    "pnpm",
+    "yarn",
+    "one liner",
+    "util function",
     "typescript",
     "vite",
     "vitest"
