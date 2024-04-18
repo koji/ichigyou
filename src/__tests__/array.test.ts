@@ -1,11 +1,12 @@
 import { describe, it, expect } from 'vitest'
 import {
-  first,
-  last,
-  removeDuplicated,
   arrToString,
   findIndex,
+  first,
+  hasUniqueValues,
   isSorted,
+  last,
+  removeDuplicated,
   removeElement,
 } from '../array'
 
@@ -162,5 +163,23 @@ describe('removeElement', () => {
       'e',
     ])
     expect(removeElement([true, false, true], false)).toEqual([true, true])
+  })
+})
+
+describe('hasUniqueValues', () => {
+  it('should return true for arrays with unique values', () => {
+    expect(hasUniqueValues([1, 2, 3, 4, 5])).toBe(true)
+    expect(hasUniqueValues(['a', 'b', 'c', 'd'])).toBe(true)
+    expect(hasUniqueValues([true, false])).toBe(true)
+  })
+
+  it('should return false for arrays with duplicate values', () => {
+    expect(hasUniqueValues([1, 1, 2, 2, 3, 3])).toBe(false)
+    expect(hasUniqueValues(['a', 'a', 'b', 'b'])).toBe(false)
+    expect(hasUniqueValues([true, true, false, false])).toBe(false)
+  })
+
+  it('should return true for empty arrays', () => {
+    expect(hasUniqueValues([])).toBe(true)
   })
 })

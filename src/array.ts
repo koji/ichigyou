@@ -78,3 +78,11 @@ export const isSorted = <T>(arr: T[], sortType: SortType) =>
  */
 export const removeElement = <T>(arr: T[], element: T) =>
   arr.filter((elm: T) => elm !== element)
+
+/**
+ * Checks if an array has unique values.
+ * @param arr - The array to be checked.
+ * @returns True if all values in the array are unique, false otherwise.
+ */
+export const hasUniqueValues = <T>(arr: T[]): boolean =>
+  new Set(arr).size === arr.length
