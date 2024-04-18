@@ -51,3 +51,11 @@ export const toTitleCase = (str: string): string =>
  */
 export const truncateString = (str: string, maxLength: number) =>
   str.length > maxLength ? `${str.slice(0, maxLength)}...` : str
+
+/**
+ * Checks if a string is a valid email.
+ * @param email - The string to be checked.
+ * @returns True if the string is a valid email, false otherwise.
+ */
+export const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)

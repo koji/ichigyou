@@ -4,6 +4,7 @@ import {
   countWords,
   isEmptyString,
   isNumeric,
+  isValidEmail,
   reverseString,
   toTitleCase,
   truncateString,
@@ -99,5 +100,19 @@ describe('truncateString', () => {
     expect(truncateString('Hello, world!', 50)).toBe('Hello, world!')
     expect(truncateString('TypeScript', 20)).toBe('TypeScript')
     expect(truncateString('Short string', 20)).toBe('Short string')
+  })
+})
+
+describe('isValidEmail', () => {
+  it('should return true for valid emails', () => {
+    expect(isValidEmail('test@example.com')).toBe(true)
+    expect(isValidEmail('john.doe@example.co.uk')).toBe(true)
+  })
+
+  it('should return false for invalid emails', () => {
+    expect(isValidEmail('test@example')).toBe(false)
+    expect(isValidEmail('test@.com')).toBe(false)
+    expect(isValidEmail('test@com')).toBe(false)
+    expect(isValidEmail('test example.com')).toBe(false)
   })
 })
