@@ -1,5 +1,10 @@
 {
+  "title": "JSR configuration file Schema",
   "name": "@koji/ichigyou",
+  "description": "one liner functions in typescript",
   "version": "0.0.6",
-  "exports": "./src/index.ts"
+  "exports": "./src/index.ts",
+  "publish": {
+    "exclude": ["./src/__tests__/"]
+  }
 }
