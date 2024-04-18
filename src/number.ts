@@ -64,3 +64,15 @@ export const minsToHoursAndMins = (mins: number): HoursAndMinutes => ({
  */
 export const average = (arr: number[]) =>
   arr.reduce((acc: number, val: number) => acc + val, 0) / arr.length
+
+/**
+ * Converts a binary number (as a string or number) to a decimal number.
+ * @param binary - The binary number to be converted. Can be a string or a number.
+ * @returns The decimal representation of the binary number.
+ */
+export const binaryToDecimal = (binary: string | number): number =>
+  typeof binary === 'number'
+    ? parseInt(binary.toString(), 2)
+    : binary.length === 0
+    ? 0
+    : parseInt(binary, 2)

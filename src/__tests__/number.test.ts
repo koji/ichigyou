@@ -8,6 +8,7 @@ import {
   sortNumAsc,
   sortNumDesc,
   average,
+  binaryToDecimal,
 } from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
@@ -99,5 +100,23 @@ describe('average', () => {
 
   it('returns NaN for an empty array', () => {
     expect(average([])).toBeNaN()
+  })
+})
+
+describe('binaryToDecimal', () => {
+  it('should return correct decimal for binary strings', () => {
+    expect(binaryToDecimal('101')).toBe(5)
+    expect(binaryToDecimal('1111')).toBe(15)
+    expect(binaryToDecimal('1001')).toBe(9)
+  })
+
+  it('should return correct decimal for binary numbers', () => {
+    expect(binaryToDecimal(101)).toBe(5)
+    expect(binaryToDecimal(1111)).toBe(15)
+    expect(binaryToDecimal(1001)).toBe(9)
+  })
+
+  it('should return 0 for empty string', () => {
+    expect(binaryToDecimal('')).toBe(0)
   })
 })
