@@ -18,7 +18,8 @@ export const countWords = (str: string): number =>
  * @param str - The string to reverse.
  * @returns The reversed string.
  */
-export const reverseString = (str: string) => str.split('').reverse().join('')
+export const reverseString = (str: string): string =>
+  str.split('').reverse().join('')
 
 /**
  * Checks if a string can be converted to a number.
@@ -49,7 +50,7 @@ export const toTitleCase = (str: string): string =>
  * @param maxLength - The maximum length of the string after truncation.
  * @returns The truncated string, or the original string if it was shorter than the maximum length.
  */
-export const truncateString = (str: string, maxLength: number) =>
+export const truncateString = (str: string, maxLength: number): string =>
   str.length > maxLength ? `${str.slice(0, maxLength)}...` : str
 
 /**
@@ -57,5 +58,5 @@ export const truncateString = (str: string, maxLength: number) =>
  * @param email - The string to be checked.
  * @returns True if the string is a valid email, false otherwise.
  */
-export const isValidEmail = (email: string) =>
+export const isValidEmail = (email: string): boolean =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)

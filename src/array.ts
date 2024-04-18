@@ -12,14 +12,14 @@ export const removeDuplicated = <T extends number | string>(arr: T[]): T[] => [
  * @param arr - The array to get the last element from.
  * @returns The last element of the array.
  */
-export const last = (arr: Array<any>) => arr[arr.length - 1]
+export const last = <T>(arr: T[]): T => arr[arr.length - 1]
 
 /**
  * Gets the first element of an array.
  * @param arr - The array to get the first element from.
  * @returns The first element of the array.
  */
-export const first = (arr: Array<any>) => arr[0]
+export const first = <T>(arr: T[]): T => arr[0]
 
 /**
  * Converts an array to a string.
@@ -33,7 +33,7 @@ export const first = (arr: Array<any>) => arr[0]
  * console.log(result); // 'hello,world'
  * ```
  */
-export const arrToString = (arr: Array<any>) => arr.join(',')
+export const arrToString = (arr: Array<any>): string => arr.join(',')
 
 /**
  * Finds the index of a given element in an array.
@@ -61,7 +61,7 @@ export const findIndex = <T>(arr: T[], element: T): number =>
  * @returns {boolean} Returns true if the array is sorted according to the sortType, otherwise false.
  */
 type SortType = 'asc' | 'desc'
-export const isSorted = <T>(arr: T[], sortType: SortType) =>
+export const isSorted = <T>(arr: T[], sortType: SortType): boolean =>
   sortType === 'asc'
     ? arr.every(
         (element: T, index: number) => index === 0 || element > arr[index - 1]
@@ -76,7 +76,7 @@ export const isSorted = <T>(arr: T[], sortType: SortType) =>
  * @param element - The element to remove.
  * @returns A new array with the specified element removed.
  */
-export const removeElement = <T>(arr: T[], element: T) =>
+export const removeElement = <T>(arr: T[], element: T): T[] =>
   arr.filter((elm: T) => elm !== element)
 
 /**

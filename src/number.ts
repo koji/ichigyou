@@ -17,14 +17,16 @@ export const findMin = (arr: number[]): number => Math.min(...arr)
  * @param arr - The array to sort.
  * @returns A new array sorted in ascending order.
  */
-export const sortNumAsc = (arr: number[]) => arr.slice().sort((a, b) => a - b)
+export const sortNumAsc = (arr: number[]): number[] =>
+  arr.slice().sort((a, b) => a - b)
 
 /**
  * Sorts an array of numbers in descending order.
  * @param arr - The array to sort.
  * @returns A new array sorted in descending order.
  */
-export const sortNumDesc = (arr: number[]) => arr.slice().sort((a, b) => b - a)
+export const sortNumDesc = (arr: number[]): number[] =>
+  arr.slice().sort((a, b) => b - a)
 
 /**
  * Generates a random number between min (inclusive) and max (inclusive).
@@ -32,7 +34,7 @@ export const sortNumDesc = (arr: number[]) => arr.slice().sort((a, b) => b - a)
  * @param max - The maximum value.
  * @returns A random number between min and max.
  */
-export const randomNum = (min: number, max: number) =>
+export const randomNum = (min: number, max: number): number =>
   Math.floor(Math.random() * (max - min + 1)) + min
 
 /**
@@ -62,7 +64,7 @@ export const minsToHoursAndMins = (mins: number): HoursAndMinutes => ({
  * @param arr - The array of numbers.
  * @returns The average of the array of numbers.
  */
-export const average = (arr: number[]) =>
+export const average = (arr: number[]): number =>
   arr.reduce((acc: number, val: number) => acc + val, 0) / arr.length
 
 /**
