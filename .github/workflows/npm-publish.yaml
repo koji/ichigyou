@@ -1,4 +1,4 @@
-name: npm-publish
+name: npm_and_jsr-publish
 on:
   release:
     types: [created]
@@ -36,7 +36,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - run: npm publish
+      - name: Publish npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_OTP: ${{ secrets.NPM_OTP }}
+        run: |
+          pnpm run build --if-present
+          npm publish
+
+      - name: Publish jsr
+        run: |
+          pnpm run build --if-present
+          npx jsr publish
