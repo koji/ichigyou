@@ -98,7 +98,7 @@ export const metersToFeet = (meters: number): number => meters / 0.3048
  * @param arr - The array of numbers.
  * @returns The mean of the array. If the array is empty, returns NaN.
  */
-export const mean = (arr: number[]) =>
+export const mean = (arr: number[]): number =>
   arr.reduce((acc, val) => acc + val, 0) / arr.length
 
 /**
@@ -106,7 +106,7 @@ export const mean = (arr: number[]) =>
  * @param num - The number to check
  * @returns boolean - Returns true if the number is prime, false otherwise
  */
-export const isPrime = (num: number) => {
+export const isPrime = (num: number): boolean => {
   if (num <= 1) return false
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) return false
