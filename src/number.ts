@@ -92,3 +92,11 @@ export const feetToMeters = (feet: number): number => feet * 0.3048
  * @returns The length in feet.
  */
 export const metersToFeet = (meters: number): number => meters / 0.3048
+
+/**
+ * Calculates the mean (average) of an array of numbers.
+ * @param arr - The array of numbers.
+ * @returns The mean of the array. If the array is empty, returns NaN.
+ */
+export const mean = (arr: number[]) =>
+  arr.reduce((acc, val) => acc + val, 0) / arr.length
