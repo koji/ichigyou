@@ -92,5 +92,5 @@ export const hasUniqueValues = <T>(arr: T[]): boolean =>
  * @param arr - The array of numbers to check.
  * @returns True if the array contains at least one even number, false otherwise.
  */
-export const hasEvenNumber = (arr: number[]) =>
+export const hasEvenNumber = (arr: number[]): boolean =>
   arr.some((num: number) => num % 2 === 0)
