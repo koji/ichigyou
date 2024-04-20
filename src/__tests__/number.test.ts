@@ -9,6 +9,8 @@ import {
   sortNumDesc,
   average,
   binaryToDecimal,
+  feetToMeters,
+  metersToFeet,
 } from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
@@ -118,5 +120,19 @@ describe('binaryToDecimal', () => {
 
   it('should return 0 for empty string', () => {
     expect(binaryToDecimal('')).toBe(0)
+  })
+})
+
+describe('feetToMeters', () => {
+  it('converts feet to meters correctly', () => {
+    expect(feetToMeters(1)).toBeCloseTo(0.3048)
+    expect(feetToMeters(10)).toBeCloseTo(3.048)
+  })
+})
+
+describe('metersToFeet', () => {
+  it('converts meters to feet correctly', () => {
+    expect(metersToFeet(1)).toBeCloseTo(3.28084)
+    expect(metersToFeet(10)).toBeCloseTo(32.8084)
   })
 })

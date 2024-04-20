@@ -78,3 +78,17 @@ export const binaryToDecimal = (binary: string | number): number =>
     : binary.length === 0
     ? 0
     : parseInt(binary, 2)
+
+/**
+ * Converts a length from feet to meters.
+ * @param feet - The length in feet.
+ * @returns The length in meters.
+ */
+export const feetToMeters = (feet: number): number => feet * 0.3048
+
+/**
+ * Converts a length from meters to feet.
+ * @param meters - The length in meters.
+ * @returns The length in feet.
+ */
+export const metersToFeet = (meters: number): number => meters / 0.3048
