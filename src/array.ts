@@ -86,3 +86,11 @@ export const removeElement = <T>(arr: T[], element: T): T[] =>
  */
 export const hasUniqueValues = <T>(arr: T[]): boolean =>
   new Set(arr).size === arr.length
+
+/**
+ * Checks if an array contains an even number.
+ * @param arr - The array of numbers to check.
+ * @returns True if the array contains at least one even number, false otherwise.
+ */
+export const hasEvenNumber = (arr: number[]) =>
+  arr.some((num: number) => num % 2 === 0)

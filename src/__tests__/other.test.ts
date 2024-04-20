@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { calcDifferenceInDays } from './../other'
+import { calcDifferenceInDays, currentMonth } from './../other'
 
 describe('calcDifferenceInDays', () => {
   it('should return 0 for the same date', () => {
@@ -17,5 +17,12 @@ describe('calcDifferenceInDays', () => {
     const date1 = new Date(2024, 3, 18)
     const date2 = new Date(2024, 4, 18)
     expect(calcDifferenceInDays(date1, date2)).toBe(30)
+  })
+})
+
+describe('currentMonth', () => {
+  it('returns the current month correctly', () => {
+    const actualMonth = new Date().getMonth() + 1
+    expect(currentMonth()).toEqual(actualMonth)
   })
 })

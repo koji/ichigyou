@@ -8,6 +8,7 @@ import {
   last,
   removeDuplicated,
   removeElement,
+  hasEvenNumber,
 } from '../array'
 
 const mockStrArr = ['a', 'b', 'c', 'd']
@@ -181,5 +182,22 @@ describe('hasUniqueValues', () => {
 
   it('should return true for empty arrays', () => {
     expect(hasUniqueValues([])).toBe(true)
+  })
+})
+
+describe('hasEvenNumber', () => {
+  it('returns true when the array contains an even number', () => {
+    const arr = [1, 3, 5, 2]
+    expect(hasEvenNumber(arr)).toBe(true)
+  })
+
+  it('returns false when the array does not contain an even number', () => {
+    const arr = [1, 3, 5, 7]
+    expect(hasEvenNumber(arr)).toBe(false)
+  })
+
+  it('returns false when the array is empty', () => {
+    const arr: number[] = []
+    expect(hasEvenNumber(arr)).toBe(false)
   })
 })
