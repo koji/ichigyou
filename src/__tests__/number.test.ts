@@ -1,16 +1,17 @@
 import { describe, it, expect } from 'vitest'
 
 import {
+  average,
+  binaryToDecimal,
+  feetToMeters,
   findMax,
   findMin,
+  mean,
+  metersToFeet,
   minsToHoursAndMins,
   randomNum,
   sortNumAsc,
   sortNumDesc,
-  average,
-  binaryToDecimal,
-  feetToMeters,
-  metersToFeet,
 } from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
@@ -134,5 +135,17 @@ describe('metersToFeet', () => {
   it('converts meters to feet correctly', () => {
     expect(metersToFeet(1)).toBeCloseTo(3.28084)
     expect(metersToFeet(10)).toBeCloseTo(32.8084)
+  })
+})
+
+describe('mean', () => {
+  it('calculates the mean of an array of numbers', () => {
+    expect(mean([1, 2, 3, 4, 5])).toEqual(3)
+    expect(mean([10, 20, 30, 40, 50])).toEqual(30)
+    expect(mean([-1, 0, 1])).toEqual(0)
+  })
+
+  it('returns NaN for an empty array', () => {
+    expect(mean([])).toEqual(NaN)
   })
 })
