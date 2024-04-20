@@ -100,3 +100,16 @@ export const metersToFeet = (meters: number): number => meters / 0.3048
  */
 export const mean = (arr: number[]) =>
   arr.reduce((acc, val) => acc + val, 0) / arr.length
+
+/**
+ * Function to check if a number is prime
+ * @param num - The number to check
+ * @returns boolean - Returns true if the number is prime, false otherwise
+ */
+export const isPrime = (num: number) => {
+  if (num <= 1) return false
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false
+  }
+  return true
+}
