@@ -1,4 +1,4 @@
-export const moveToTop = () => window.scrollTo(0, 0)
+export const moveToTop = () => window.scrollTo(0, 0);
 
 /**
  * Calculates the difference between two dates in days.
@@ -9,11 +9,11 @@ export const moveToTop = () => window.scrollTo(0, 0)
 export const calcDifferenceInDays = (date1: Date, date2: Date): number => {
   return Math.abs(
     Math.floor((date2.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24))
-  )
-}
+  );
+};
 
 /**
  * Gets the current month number.
  * @returns The current month as a number (1 for January, 2 for February, ..., 12 for December).
  */
-export const currentMonth = (): number => new Date().getMonth() + 1
+export const currentMonth = (): number => new Date().getMonth() + 1;

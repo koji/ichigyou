@@ -10,4 +10,4 @@
 export const hasProperty = <T extends keyof any>(
   obj: Record<string, unknown>,
   prop: T
-): boolean => Object.prototype.hasOwnProperty.call(obj, prop)
+): boolean => Object.prototype.hasOwnProperty.call(obj, prop);
