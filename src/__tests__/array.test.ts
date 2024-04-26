@@ -9,6 +9,7 @@ import {
   removeDuplicated,
   removeElement,
   hasEvenNumber,
+  lastNElements,
 } from "../array";
 
 const mockStrArr = ["a", "b", "c", "d"];
@@ -201,3 +202,18 @@ describe("hasEvenNumber", () => {
     expect(hasEvenNumber(arr)).toBe(false);
   });
 });
+
+describe('lastNElements', () => {
+  it('returns the last n elements from the array', () => {
+    expect(lastNElements([1, 2, 3, 4, 5], 2)).toEqual([4, 5])
+    expect(lastNElements(['a', 'b', 'c', 'd', 'e'], 3)).toEqual(['c', 'd', 'e'])
+  })
+
+  it('returns an empty array when n is 0', () => {
+    expect(lastNElements([1, 2, 3, 4, 5], 0)).toEqual([])
+  })
+
+  it('returns the entire array when n is greater than the array length', () => {
+    expect(lastNElements([1, 2, 3, 4, 5], 10)).toEqual([1, 2, 3, 4, 5])
+  })
+})
