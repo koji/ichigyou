@@ -3,7 +3,7 @@
  * @param str - The string to check.
  * @returns A boolean indicating whether the string is empty after trimming.
  */
-export const isEmptyString = (str: string): boolean => str.trim().length === 0;
+export const isEmptyString = (str: string): boolean => str.trim().length === 0
 
 /**
  * Counts the number of words in a string.
@@ -11,7 +11,7 @@ export const isEmptyString = (str: string): boolean => str.trim().length === 0;
  * @returns The number of words in the string.
  */
 export const countWords = (str: string): number =>
-  str.trim().length === 0 ? 0 : str.trim().split(/\s+/).length;
+  str.trim().length === 0 ? 0 : str.trim().split(/\s+/).length
 
 /**
  * Reverses a string.
@@ -19,7 +19,7 @@ export const countWords = (str: string): number =>
  * @returns The reversed string.
  */
 export const reverseString = (str: string): string =>
-  str.split("").reverse().join("");
+  str.split('').reverse().join('')
 
 /**
  * Checks if a string can be converted to a number.
@@ -27,7 +27,7 @@ export const reverseString = (str: string): string =>
  * @returns A boolean indicating whether the string can be converted to a number.
  */
 export const isNumeric = (str: string): boolean =>
-  str.length === 0 ? false : !isNaN(Number(str));
+  str.length === 0 ? false : !isNaN(Number(str))
 
 /**
  * Converts a string to title case.
@@ -42,7 +42,7 @@ export const isNumeric = (str: string): boolean =>
  * ```
  */
 export const toTitleCase = (str: string): string =>
-  str.replace(/\b\w/g, (match) => match.toUpperCase());
+  str.replace(/\b\w/g, (match) => match.toUpperCase())
 
 /**
  * Truncates a string to a specified maximum length and appends '...' if the string was truncated.
@@ -51,7 +51,7 @@ export const toTitleCase = (str: string): string =>
  * @returns The truncated string, or the original string if it was shorter than the maximum length.
  */
 export const truncateString = (str: string, maxLength: number): string =>
-  str.length > maxLength ? `${str.slice(0, maxLength)}...` : str;
+  str.length > maxLength ? `${str.slice(0, maxLength)}...` : str
 
 /**
  * Checks if a string is a valid email.
@@ -59,7 +59,7 @@ export const truncateString = (str: string, maxLength: number): string =>
  * @returns True if the string is a valid email, false otherwise.
  */
 export const isValidEmail = (email: string): boolean =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
 /**
  * This function counts the number of rows in a given text.
@@ -67,4 +67,25 @@ export const isValidEmail = (email: string): boolean =>
  * @returns The number of rows in the input string.
  */
 export const countTextRows = (value: string): number =>
-  value === "" ? 0 : value.split("\n").length;
+  value === '' ? 0 : value.split('\n').length
+
+/**
+ * Checks if a given string is a valid URL.
+ * @param url - The string to be checked.
+ * @returns A promise that resolves to `true` if the URL is valid, `false` otherwise.
+ */
+export const isValidURL = (url: string): boolean => {
+  try {
+    new URL(url)
+    return true
+  } catch (error) {
+    return false
+  }
+}
+
+/**
+ * Removes all whitespace characters from a given string.
+ * @param str - The string to remove whitespace from.
+ * @returns The input string with all whitespace characters removed.
+ */
+export const removeWhitespace = (str: string): string => str.replace(/\s/g, '')
