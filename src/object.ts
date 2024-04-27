@@ -10,4 +10,12 @@
 export const hasProperty = <T extends keyof any>(
   obj: Record<string, unknown>,
   prop: T
-): boolean => Object.prototype.hasOwnProperty.call(obj, prop);
+): boolean => Object.prototype.hasOwnProperty.call(obj, prop)
+
+/**
+ * Checks if a given object is empty.
+ * @param obj - The object to be checked.
+ * @returns `true` if the object is empty, `false` otherwise.
+ */
+export const isEmptyObject = (obj: Object): boolean =>
+  Object.keys(obj).length === 0

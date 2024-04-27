@@ -1,133 +1,169 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from 'vitest'
 
 import {
+  countTextRows,
   countWords,
   isEmptyString,
   isNumeric,
   isValidEmail,
+  isValidURL,
   reverseString,
   toTitleCase,
   truncateString,
-  countTextRows,
-} from "../string";
+  removeWhitespace,
+} from '../string'
 
-describe("isEmptyString", () => {
-  it("should return true for an empty string", () => {
-    expect(isEmptyString(" ")).toBe(true);
-  });
+describe('isEmptyString', () => {
+  it('should return true for an empty string', () => {
+    expect(isEmptyString(' ')).toBe(true)
+  })
 
-  it("should return false for a non-empty string", () => {
-    expect(isEmptyString("Hello")).toBe(false);
-  });
-});
+  it('should return false for a non-empty string', () => {
+    expect(isEmptyString('Hello')).toBe(false)
+  })
+})
 
-describe("countWords", () => {
-  it("should return 0 for an empty string", () => {
-    expect(countWords("")).toBe(0);
-  });
+describe('countWords', () => {
+  it('should return 0 for an empty string', () => {
+    expect(countWords('')).toBe(0)
+  })
 
-  it("should return 1 for a single word", () => {
-    expect(countWords("Hello")).toBe(1);
-  });
+  it('should return 1 for a single word', () => {
+    expect(countWords('Hello')).toBe(1)
+  })
 
-  it("should return 5 for a sentence with five words", () => {
-    expect(countWords("The quick brown fox jumps")).toBe(5);
-  });
+  it('should return 5 for a sentence with five words', () => {
+    expect(countWords('The quick brown fox jumps')).toBe(5)
+  })
 
-  it("should ignore leading and trailing spaces", () => {
-    expect(countWords("  Hello  ")).toBe(1);
-  });
-});
+  it('should ignore leading and trailing spaces', () => {
+    expect(countWords('  Hello  ')).toBe(1)
+  })
+})
 
-describe("reverseString", () => {
-  it("should return the reverse of a non-empty string", () => {
-    expect(reverseString("Hello")).toBe("olleH");
-  });
+describe('reverseString', () => {
+  it('should return the reverse of a non-empty string', () => {
+    expect(reverseString('Hello')).toBe('olleH')
+  })
 
-  it("should return an empty string when the input is an empty string", () => {
-    expect(reverseString("")).toBe("");
-  });
-});
+  it('should return an empty string when the input is an empty string', () => {
+    expect(reverseString('')).toBe('')
+  })
+})
 
-describe("isNumeric", () => {
-  it("should return true for numeric strings", () => {
-    expect(isNumeric("123")).toBe(true);
-    expect(isNumeric("3.14")).toBe(true);
-  });
+describe('isNumeric', () => {
+  it('should return true for numeric strings', () => {
+    expect(isNumeric('123')).toBe(true)
+    expect(isNumeric('3.14')).toBe(true)
+  })
 
-  it("should return false for non-numeric strings", () => {
-    expect(isNumeric("hello")).toBe(false);
-  });
+  it('should return false for non-numeric strings', () => {
+    expect(isNumeric('hello')).toBe(false)
+  })
 
-  it("should return true for strings representing zero", () => {
-    expect(isNumeric("0")).toBe(true);
-  });
+  it('should return true for strings representing zero', () => {
+    expect(isNumeric('0')).toBe(true)
+  })
 
-  it("should return false for empty strings", () => {
-    expect(isNumeric("")).toBe(false);
-  });
-});
+  it('should return false for empty strings', () => {
+    expect(isNumeric('')).toBe(false)
+  })
+})
 
-describe("toTitleCase", () => {
-  it("should return the correct title case for a single word", () => {
-    const result = toTitleCase("hello");
-    expect(result).to.equal("Hello");
-  });
+describe('toTitleCase', () => {
+  it('should return the correct title case for a single word', () => {
+    const result = toTitleCase('hello')
+    expect(result).to.equal('Hello')
+  })
 
-  it("should return the correct title case for multiple words", () => {
-    const result = toTitleCase("hello world");
-    expect(result).to.equal("Hello World");
-  });
+  it('should return the correct title case for multiple words', () => {
+    const result = toTitleCase('hello world')
+    expect(result).to.equal('Hello World')
+  })
 
-  it("should handle empty strings", () => {
-    const result = toTitleCase("");
-    expect(result).to.equal("");
-  });
-});
+  it('should handle empty strings', () => {
+    const result = toTitleCase('')
+    expect(result).to.equal('')
+  })
+})
 
-describe("truncateString", () => {
+describe('truncateString', () => {
   it("truncates a string to a specified maximum length and appends '...' if the string was truncated", () => {
-    expect(truncateString("Hello, world!", 5)).toBe("Hello...");
-    expect(truncateString("TypeScript is awesome!", 10)).toBe("TypeScript...");
+    expect(truncateString('Hello, world!', 5)).toBe('Hello...')
+    expect(truncateString('TypeScript is awesome!', 10)).toBe('TypeScript...')
     expect(
       truncateString(
-        "This is a really long string that needs to be truncated.",
+        'This is a really long string that needs to be truncated.',
         20
       )
-    ).toBe("This is a really lon...");
-  });
+    ).toBe('This is a really lon...')
+  })
 
-  it("returns the original string if it was shorter than the maximum length", () => {
-    expect(truncateString("Hello, world!", 50)).toBe("Hello, world!");
-    expect(truncateString("TypeScript", 20)).toBe("TypeScript");
-    expect(truncateString("Short string", 20)).toBe("Short string");
-  });
-});
+  it('returns the original string if it was shorter than the maximum length', () => {
+    expect(truncateString('Hello, world!', 50)).toBe('Hello, world!')
+    expect(truncateString('TypeScript', 20)).toBe('TypeScript')
+    expect(truncateString('Short string', 20)).toBe('Short string')
+  })
+})
 
-describe("isValidEmail", () => {
-  it("should return true for valid emails", () => {
-    expect(isValidEmail("test@example.com")).toBe(true);
-    expect(isValidEmail("john.doe@example.co.uk")).toBe(true);
-  });
+describe('isValidEmail', () => {
+  it('should return true for valid emails', () => {
+    expect(isValidEmail('test@example.com')).toBe(true)
+    expect(isValidEmail('john.doe@example.co.uk')).toBe(true)
+  })
 
-  it("should return false for invalid emails", () => {
-    expect(isValidEmail("test@example")).toBe(false);
-    expect(isValidEmail("test@.com")).toBe(false);
-    expect(isValidEmail("test@com")).toBe(false);
-    expect(isValidEmail("test example.com")).toBe(false);
-  });
-});
+  it('should return false for invalid emails', () => {
+    expect(isValidEmail('test@example')).toBe(false)
+    expect(isValidEmail('test@.com')).toBe(false)
+    expect(isValidEmail('test@com')).toBe(false)
+    expect(isValidEmail('test example.com')).toBe(false)
+  })
+})
 
-describe("countTextRows", () => {
-  it("should return the correct number of rows", () => {
-    const input = "Hello\nWorld\nThis is\na test";
-    const expectedOutput = 4;
-    expect(countTextRows(input)).toBe(expectedOutput);
-  });
+describe('countTextRows', () => {
+  it('should return the correct number of rows', () => {
+    const input = 'Hello\nWorld\nThis is\na test'
+    const expectedOutput = 4
+    expect(countTextRows(input)).toBe(expectedOutput)
+  })
 
-  it("should return 0 if the string is empty", () => {
-    const input = "";
-    const expectedOutput = 0;
-    expect(countTextRows(input)).toBe(expectedOutput);
-  });
-});
+  it('should return 0 if the string is empty', () => {
+    const input = ''
+    const expectedOutput = 0
+    expect(countTextRows(input)).toBe(expectedOutput)
+  })
+})
+
+describe('isValidURL', () => {
+  it('should return true for a valid URL', async () => {
+    const url = 'https://www.example.com'
+    const result = await isValidURL(url)
+    expect(result).toBe(true)
+  })
+
+  it('should return false for an invalid URL', async () => {
+    const url = 'invalid_url'
+    const result = await isValidURL(url)
+    expect(result).toBe(false)
+  })
+})
+
+describe('removeWhitespace', () => {
+  it('should return the string without spaces', () => {
+    const str = 'Hello, World!'
+    const result = removeWhitespace(str)
+    expect(result).toBe('Hello,World!')
+  })
+
+  it('should return the string without any whitespace characters', () => {
+    const str = 'Hello\t\n World!'
+    const result = removeWhitespace(str)
+    expect(result).toBe('HelloWorld!')
+  })
+
+  it('should return an empty string if the input is an empty string', () => {
+    const str = ''
+    const result = removeWhitespace(str)
+    expect(result).toBe('')
+  })
+})

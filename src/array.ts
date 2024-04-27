@@ -103,3 +103,14 @@ export const hasEvenNumber = (arr: number[]): boolean =>
  */
 export const lastNElements = <T>(arr: T[], n: number): T[] =>
   n === 0 ? [] : arr.slice(-n)
+
+/**
+ * Returns the intersection of two arrays or null if there is no intersection.
+ * @param arr1 - The first array.
+ * @param arr2 - The second array.
+ * @returns An array that contains the intersection of `arr1` and `arr2`, or `null` if there is no intersection.
+ */
+export const intersection = <T>(arr1: T[], arr2: T[]): T[] | null =>
+  arr1.filter((val) => arr2.includes(val)).length === 0
+    ? null
+    : arr1.filter((val) => arr2.includes(val))
