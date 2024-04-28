@@ -11,6 +11,7 @@ import {
   lastNElements,
   removeDuplicated,
   removeElement,
+  firstNElements,
 } from '../array'
 
 const mockStrArr = ['a', 'b', 'c', 'd']
@@ -201,6 +202,23 @@ describe('hasEvenNumber', () => {
   it('returns false when the array is empty', () => {
     const arr: number[] = []
     expect(hasEvenNumber(arr)).toBe(false)
+  })
+})
+
+describe('firstNElements', () => {
+  it('returns the first n elements of an array', () => {
+    const arr = [1, 2, 3, 4, 5]
+    expect(firstNElements(arr, 3)).toEqual([1, 2, 3])
+  })
+
+  it('returns an empty array when n is 0', () => {
+    const arr = [1, 2, 3, 4, 5]
+    expect(firstNElements(arr, 0)).toEqual([])
+  })
+
+  it('returns the whole array when n is greater than the array length', () => {
+    const arr = [1, 2, 3, 4, 5]
+    expect(firstNElements(arr, 10)).toEqual([1, 2, 3, 4, 5])
   })
 })
 

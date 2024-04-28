@@ -96,6 +96,14 @@ export const hasEvenNumber = (arr: number[]): boolean =>
   arr.some((num: number) => num % 2 === 0)
 
 /**
+ * Returns the first 'n' elements of an array.
+ * @param arr - The array from which to extract elements.
+ * @param n - The number of elements to extract from the start of the array.
+ * @returns A new array containing the first 'n' elements from the input array.
+ */
+export const firstNElements = <T>(arr: T[], n: number): T[] => arr.slice(0, n)
+
+/**
  * Returns the last 'n' elements from the given array.
  * @param arr - The array from which to extract elements.
  * @param n - The number of elements to extract from the end of the array.
