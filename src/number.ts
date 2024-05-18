@@ -144,9 +144,8 @@ export const isOdd = (num: number): boolean => num % 2 !== 0
 export const standardDeviation = (arr: number[]): number =>
   Math.sqrt(
     arr.reduce(
-      (acc, val) =>
-        acc +
-        Math.pow(val - arr.reduce((acc, val) => acc + val, 0) / arr.length, 2),
+      (acc, val, _, { length }) =>
+        acc + Math.pow(val - arr.reduce((a, v) => a + v, 0) / length, 2),
       0
     ) / arr.length
   )
