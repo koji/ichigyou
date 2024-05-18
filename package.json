@@ -5,7 +5,7 @@
   "scripts": {
     "build": "vite build && tsc",
     "test": "vitest",
-    "doc": "typedoc --entryPointStrategy expand ./src",
+    "doc": "typedoc --entryPointStrategy expand ./src --exclude **/*.test.ts",
     "publish-jsr": "npx jsr publish"
   },
   "repository": {
@@ -34,7 +34,7 @@
   "devDependencies": {
     "typedoc": "^0.25.13",
     "typescript": "^5.4.5",
-    "vite": "^5.2.8",
+    "vite": "^5.2.11",
     "vitest": "^1.5.0"
   },
   "exports": {
