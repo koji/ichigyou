@@ -128,3 +128,10 @@ export const degToRad = (degrees: number): number => degrees * (Math.PI / 180)
  */
 export const factorial = (num: number): number =>
   num === 0 || num === 1 ? 1 : num * factorial(num - 1)
+
+/**
+ * Checks if a number is odd.
+ * @param num - The number to check.
+ * @returns `true` if the number is odd, `false` otherwise.
+ */
+export const isOdd = (num: number): boolean => num % 2 !== 0

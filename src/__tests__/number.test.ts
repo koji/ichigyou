@@ -8,6 +8,7 @@ import {
   feetToMeters,
   findMax,
   findMin,
+  isOdd,
   isPrime,
   mean,
   metersToFeet,
@@ -203,5 +204,23 @@ describe('factorial', () => {
     const num = 5
     const result = factorial(num)
     expect(result).toBe(120)
+  })
+})
+
+describe('isOdd', () => {
+  it('should return true for odd numbers', () => {
+    expect(isOdd(3)).toBe(true)
+    expect(isOdd(7)).toBe(true)
+    expect(isOdd(-5)).toBe(true)
+  })
+
+  it('should return false for even numbers', () => {
+    expect(isOdd(2)).toBe(false)
+    expect(isOdd(8)).toBe(false)
+    expect(isOdd(-4)).toBe(false)
+  })
+
+  it('should return false for zero', () => {
+    expect(isOdd(0)).toBe(false)
   })
 })
