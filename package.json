@@ -3,7 +3,6 @@
   "version": "0.0.7",
   "description": "one liner functions in typescript",
   "scripts": {
-    "dev": "vite",
     "build": "vite build && tsc",
     "test": "vitest",
     "doc": "typedoc --entryPointStrategy expand ./src",
@@ -34,7 +33,7 @@
   ],
   "devDependencies": {
     "typedoc": "^0.25.13",
-    "typescript": "^5.4.4",
+    "typescript": "^5.4.5",
     "vite": "^5.2.8",
     "vitest": "^1.5.0"
   },
