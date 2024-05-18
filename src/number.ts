@@ -135,3 +135,26 @@ export const factorial = (num: number): number =>
  * @returns `true` if the number is odd, `false` otherwise.
  */
 export const isOdd = (num: number): boolean => num % 2 !== 0
+
+/**
+ * Calculates the standard deviation of an array of numbers.
+ * @param arr - The array of numbers to calculate the standard deviation for.
+ * @returns The standard deviation of the array.
+ */
+export const standardDeviation = (arr: number[]): number =>
+  Math.sqrt(
+    arr.reduce(
+      (acc, val) =>
+        acc +
+        Math.pow(val - arr.reduce((acc, val) => acc + val, 0) / arr.length, 2),
+      0
+    ) / arr.length
+  )
+
+/**
+ * Calculates the sum of all numbers in an array.
+ * @param arr - An array of numbers to be summed.
+ * @returns The sum of the array elements.
+ */
+export const sum = (arr: number[]): number =>
+  arr.reduce((acc, val) => acc + val)
