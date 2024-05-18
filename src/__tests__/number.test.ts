@@ -16,6 +16,8 @@ import {
   randomNum,
   sortNumAsc,
   sortNumDesc,
+  standardDeviation,
+  sum,
 } from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
@@ -222,5 +224,27 @@ describe('isOdd', () => {
 
   it('should return false for zero', () => {
     expect(isOdd(0)).toBe(false)
+  })
+})
+
+describe('standardDeviation', () => {
+  it('should return standard deviation', () => {
+    expect(standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])).toBe(2)
+    expect(standardDeviation([1, 2, 3, 4, 5])).toBe(1.4142135623730951)
+    expect(standardDeviation([10, 12, 23, 23, 16, 23, 21, 16])).toBe(
+      4.898979485566356
+    )
+    expect(standardDeviation([100, 200, 300, 400, 500])).toBe(141.4213562373095)
+    expect(standardDeviation([1, 1, 1, 1, 1])).toBe(0)
+  })
+})
+
+describe('sum', () => {
+  it('should return the sum of numbers in array', () => {
+    expect(sum([1, 2, 3, 4, 5])).toBe(15)
+    expect(sum([-1, -2, -3, -4, -5])).toBe(-15)
+    expect(sum([10, 20, 30])).toBe(60)
+    expect(sum([0, 0, 0, 0])).toBe(0)
+    expect(sum([1.5, 2.5, 3.5])).toBe(7.5)
   })
 })
