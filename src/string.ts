@@ -98,3 +98,36 @@ export const removeWhitespace = (str: string): string => str.replace(/\s/g, '')
  */
 export const isPalindromeCaseSensitive = (str: string): boolean =>
   str === str.split('').reverse().join('')
+
+/**
+ * Finds the longest word in a given string.
+ *
+ * @param str - The input string.
+ * @returns The longest word found in the string.
+ */
+export const findLongestWord = (str: string): string =>
+  str
+    .split(' ')
+    .reduce(
+      (longest, word) => (word.length > longest.length ? word : longest),
+      ''
+    )
+
+/**
+ * Counts the occurrences of a target character in a given string.
+ *
+ * @param str - The input string.
+ * @param targetChar - The character to count occurrences of.
+ * @returns The number of occurrences of `targetChar` in `str`.
+ */
+export const countOccurrences = (str: string, targetChar: string): number =>
+  str.split(targetChar).length - 1
+
+/**
+ * Removes duplicated characters from a string.
+ *
+ * @param str - The input string.
+ * @returns A new string with duplicated characters removed.
+ */
+export const removeDuplicatedChars = (str: string): string =>
+  [...new Set(str.split(''))].join('')
