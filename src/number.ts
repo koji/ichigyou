@@ -243,3 +243,19 @@ export const binaryToDecimalWithoutParseInt = (binary: string): number =>
     .split('')
     .reverse()
     .reduce((dec, bit, index) => dec + (bit === '1' ? 2 ** index : 0), 0)
+
+/**
+ * Checks if an array is sorted in descending order.
+ *
+ * @param arr - The input array of numbers.
+ * @returns `true` if the array is sorted in descending order, otherwise `false`.
+ *
+ * @example
+ * ```typescript
+ * const sortedArray = [5, 3, 2, 1];
+ * const isDescending = isSortedDescending(sortedArray);
+ * console.log(isDescending); // Output: true
+ * ```
+ */
+export const isSortedDescending = (arr: number[]): boolean =>
+  arr.every((el, i) => i === 0 || el <= arr[i - 1])
