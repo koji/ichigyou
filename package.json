@@ -1,7 +1,7 @@
 {
   "name": "ichigyou",
-  "version": "0.0.7",
-  "description": "one liner functions in typescript",
+  "version": "0.0.8",
+  "description": "one liner(1行) functions in typescript",
   "scripts": {
     "build": "vite build && tsc",
     "test": "vitest",
