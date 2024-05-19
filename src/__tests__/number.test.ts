@@ -3,22 +3,26 @@ import { describe, it, expect } from 'vitest'
 import {
   average,
   binaryToDecimal,
+  binaryToDecimalWithoutParseInt,
   degToRad,
   factorial,
   feetToMeters,
   findMax,
   findMin,
+  gcd,
+  genRandomArray,
   isOdd,
   isPrime,
+  lcm,
   mean,
   metersToFeet,
   minsToHoursAndMins,
   randomNum,
+  secondsToHoursMinsSecs,
   sortNumAsc,
   sortNumDesc,
   standardDeviation,
   sum,
-  genRandomArray,
 } from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
@@ -250,7 +254,7 @@ describe('sum', () => {
   })
 })
 
-describe('randomArray', () => {
+describe('genRandomArray', () => {
   it('should create an array of the specified length', () => {
     const result = genRandomArray(5, 10, 20)
     expect(result).toHaveLength(5)
@@ -269,5 +273,64 @@ describe('randomArray', () => {
     result.forEach((value) => {
       expect(value).toBe(15)
     })
+  })
+})
+
+describe('gcd', () => {
+  it('calculates GCD correctly', () => {
+    expect(gcd(12, 18)).toBe(6)
+    expect(gcd(15, 25)).toBe(5)
+    expect(gcd(7, 21)).toBe(7)
+  })
+
+  it('handles zero correctly', () => {
+    expect(gcd(0, 10)).toBe(10)
+    expect(gcd(10, 0)).toBe(10)
+  })
+})
+
+describe('secondsToHoursMinsSecs', () => {
+  it('converts seconds correctly', () => {
+    expect(secondsToHoursMinsSecs(3661)).toEqual({
+      hours: 1,
+      minutes: 1,
+      seconds: 1,
+    })
+    expect(secondsToHoursMinsSecs(7200)).toEqual({
+      hours: 2,
+      minutes: 0,
+      seconds: 0,
+    })
+  })
+})
+
+describe('lcm', () => {
+  it('calculates LCM correctly', () => {
+    expect(lcm(12, 18)).toBe(36)
+    expect(lcm(15, 25)).toBe(75)
+    expect(lcm(7, 21)).toBe(21)
+  })
+
+  it('handles zero correctly', () => {
+    expect(lcm(0, 10)).toBe(0)
+    expect(lcm(10, 0)).toBe(0)
+  })
+})
+
+describe('binaryToDecimalWithoutParseInt', () => {
+  it('converts binary "1101" to decimal 13', () => {
+    expect(binaryToDecimalWithoutParseInt('1101')).toBe(13)
+  })
+
+  it('converts binary "101010" to decimal 42', () => {
+    expect(binaryToDecimalWithoutParseInt('101010')).toBe(42)
+  })
+
+  it('converts binary "0" to decimal 0', () => {
+    expect(binaryToDecimalWithoutParseInt('0')).toBe(0)
+  })
+
+  it('converts binary "1" to decimal 1', () => {
+    expect(binaryToDecimalWithoutParseInt('1')).toBe(1)
   })
 })

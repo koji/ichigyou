@@ -179,3 +179,67 @@ export const genRandomArray = (
     { length },
     () => Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue
   )
+
+/**
+ * Calculates the greatest common divisor (GCD) of two numbers.
+ *
+ * @remarks
+ * This function uses the Euclidean algorithm.
+ *
+ * @param num1 - The first input number.
+ * @param num2 - The second input number.
+ * @returns The GCD of `num1` and `num2`.
+ */
+export const gcd = (num1: number, num2: number): number =>
+  num2 === 0 ? num1 : gcd(num2, num1 % num2)
+
+/**
+ * Converts seconds to a time format with hours, minutes, and seconds.
+ *
+ * @param seconds - The input time in seconds.
+ * @returns An object with `hours`, `minutes`, and `seconds`.
+ */
+type TimeFormat = {
+  hours: number
+  minutes: number
+  seconds: number
+}
+export const secondsToHoursMinsSecs = (seconds: number): TimeFormat => {
+  return {
+    hours: Math.floor(seconds / 3600),
+    minutes: Math.floor((seconds % 3600) / 60),
+    seconds: (seconds % 3600) % 60,
+  }
+}
+
+/**
+ * Calculates the least common multiple (LCM) of two numbers.
+ *
+ * @param num1 - The first input number.
+ * @param num2 - The second input number.
+ * @returns The LCM of `num1` and `num2`.
+ */
+export const lcm = (num1: number, num2: number) =>
+  (num1 * num2) / gcd(num1, num2)
+
+/**
+ * Converts a binary string to its decimal equivalent.
+ *
+ * @param binary - The binary string to convert.
+ * @returns The decimal value.
+ *
+ * @remarks
+ * This function assumes that the input binary string is valid (contains only '0' and '1').
+ * If an invalid binary string is provided, the result may be unexpected.
+ *
+ * @example
+ * ```typescript
+ * const decimalValue = binaryToDecimalWithoutParseInt('1101');
+ * console.log(decimalValue); // Output: 13
+ * ```
+ */
+export const binaryToDecimalWithoutParseInt = (binary: string): number =>
+  binary
+    .split('')
+    .reverse()
+    .reduce((dec, bit, index) => dec + (bit === '1' ? 2 ** index : 0), 0)

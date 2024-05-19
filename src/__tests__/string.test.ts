@@ -2,7 +2,9 @@ import { describe, it, expect } from 'vitest'
 
 import {
   countTextRows,
+  countOccurrences,
   countWords,
+  findLongestWord,
   isEmptyString,
   isNumeric,
   isPalindromeCaseSensitive,
@@ -12,6 +14,7 @@ import {
   reverseString,
   toTitleCase,
   truncateString,
+  removeDuplicatedChars,
 } from '../string'
 
 describe('isEmptyString', () => {
@@ -184,5 +187,36 @@ describe('isPalindromeCaseSensitive', () => {
 
   it('should return false for a string that is only a palindrome when case is ignored', () => {
     expect(isPalindromeCaseSensitive('Racecar')).toBe(false)
+  })
+})
+
+describe('findLongestWord', () => {
+  it('finds the longest word correctly', () => {
+    expect(findLongestWord('apple banana cherry')).toBe('cherry')
+    expect(findLongestWord('hello world')).toBe('hello')
+  })
+})
+
+describe('countOccurrences', () => {
+  it('counts occurrences correctly', () => {
+    expect(countOccurrences('hello world', 'o')).toBe(2)
+    expect(countOccurrences('banana', 'a')).toBe(3)
+    expect(countOccurrences('koji', 'i')).toBe(1)
+  })
+})
+
+describe('removeDuplicatedChars', () => {
+  it('removes duplicated characters', () => {
+    expect(removeDuplicatedChars('hello')).toBe('helo')
+    expect(removeDuplicatedChars('banana')).toBe('ban')
+    expect(removeDuplicatedChars('aabbcc')).toBe('abc')
+  })
+
+  it('handles empty strings', () => {
+    expect(removeDuplicatedChars('')).toBe('')
+  })
+
+  it('preserves order of characters', () => {
+    expect(removeDuplicatedChars('abcbca')).toBe('abc')
   })
 })
