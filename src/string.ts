@@ -89,3 +89,12 @@ export const isValidURL = (url: string): boolean => {
  * @returns The input string with all whitespace characters removed.
  */
 export const removeWhitespace = (str: string): string => str.replace(/\s/g, '')
+
+/**
+ * Checks if a given string is a palindrome considering case sensitivity.
+ *
+ * @param str - The string to be checked.
+ * @returns {boolean} - `true` if `str` is a palindrome, `false` otherwise.
+ */
+export const isPalindromeCaseSensitive = (str: string): boolean =>
+  str === str.split('').reverse().join('')

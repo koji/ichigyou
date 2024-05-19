@@ -18,6 +18,7 @@ import {
   sortNumDesc,
   standardDeviation,
   sum,
+  genRandomArray,
 } from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
@@ -246,5 +247,27 @@ describe('sum', () => {
     expect(sum([10, 20, 30])).toBe(60)
     expect(sum([0, 0, 0, 0])).toBe(0)
     expect(sum([1.5, 2.5, 3.5])).toBe(7.5)
+  })
+})
+
+describe('randomArray', () => {
+  it('should create an array of the specified length', () => {
+    const result = genRandomArray(5, 10, 20)
+    expect(result).toHaveLength(5)
+  })
+
+  it('should create an array where all values are within the specified range', () => {
+    const result = genRandomArray(5, 10, 20)
+    result.forEach((value) => {
+      expect(value).toBeGreaterThanOrEqual(10)
+      expect(value).toBeLessThanOrEqual(20)
+    })
+  })
+
+  it('should handle the case where minValue equals maxValue', () => {
+    const result = genRandomArray(5, 15, 15)
+    result.forEach((value) => {
+      expect(value).toBe(15)
+    })
   })
 })

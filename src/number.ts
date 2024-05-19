@@ -157,3 +157,25 @@ export const standardDeviation = (arr: number[]): number =>
  */
 export const sum = (arr: number[]): number =>
   arr.reduce((acc, val) => acc + val)
+
+/**
+ * Generates an array of random integers within a specified range.
+ *
+ * @param length - The number of elements in the resulting array.
+ * @param minValue - The minimum value (inclusive) that can be generated.
+ * @param maxValue - The maximum value (inclusive) that can be generated.
+ * @returns An array of random integers between minValue and maxValue.
+ *
+ * @example
+ * // Returns an array of 5 random numbers between 10 and 20.
+ * genRandomArray(5, 10, 20);
+ */
+export const genRandomArray = (
+  length: number,
+  minValue: number,
+  maxValue: number
+) =>
+  Array.from(
+    { length },
+    () => Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue
+  )

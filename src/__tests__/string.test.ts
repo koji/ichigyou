@@ -5,12 +5,13 @@ import {
   countWords,
   isEmptyString,
   isNumeric,
+  isPalindromeCaseSensitive,
   isValidEmail,
   isValidURL,
+  removeWhitespace,
   reverseString,
   toTitleCase,
   truncateString,
-  removeWhitespace,
 } from '../string'
 
 describe('isEmptyString', () => {
@@ -165,5 +166,23 @@ describe('removeWhitespace', () => {
     const str = ''
     const result = removeWhitespace(str)
     expect(result).toBe('')
+  })
+})
+
+describe('isPalindromeCaseSensitive', () => {
+  it('should return true for a palindrome string', () => {
+    expect(isPalindromeCaseSensitive('racecar')).toBe(true)
+  })
+
+  it('should return false for a non-palindrome string', () => {
+    expect(isPalindromeCaseSensitive('hello')).toBe(false)
+  })
+
+  it('should return true for an empty string', () => {
+    expect(isPalindromeCaseSensitive('')).toBe(true)
+  })
+
+  it('should return false for a string that is only a palindrome when case is ignored', () => {
+    expect(isPalindromeCaseSensitive('Racecar')).toBe(false)
   })
 })
