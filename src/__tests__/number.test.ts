@@ -13,6 +13,7 @@ import {
   genRandomArray,
   isOdd,
   isPrime,
+  isSortedDescending,
   lcm,
   mean,
   metersToFeet,
@@ -332,5 +333,23 @@ describe('binaryToDecimalWithoutParseInt', () => {
 
   it('converts binary "1" to decimal 1', () => {
     expect(binaryToDecimalWithoutParseInt('1')).toBe(1)
+  })
+})
+
+describe('isSortedDescending', () => {
+  it('returns true for a descending array', () => {
+    expect(isSortedDescending([5, 3, 2, 1])).toBe(true)
+  })
+
+  it('returns false for an ascending array', () => {
+    expect(isSortedDescending([1, 2, 3, 5])).toBe(false)
+  })
+
+  it('returns true for an empty array', () => {
+    expect(isSortedDescending([])).toBe(true)
+  })
+
+  it('returns true for a single-element array', () => {
+    expect(isSortedDescending([42])).toBe(true)
   })
 })
