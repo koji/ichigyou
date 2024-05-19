@@ -192,7 +192,9 @@ describe('isPalindromeCaseSensitive', () => {
 
 describe('findLongestWord', () => {
   it('finds the longest word correctly', () => {
-    expect(findLongestWord('apple banana cherry')).toBe('cherry')
+    expect(findLongestWord('apple banana american-cherry')).toBe(
+      'american-cherry'
+    )
     expect(findLongestWord('hello world')).toBe('hello')
   })
 })
