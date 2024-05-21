@@ -174,7 +174,7 @@ export const genRandomArray = (
   length: number,
   minValue: number,
   maxValue: number
-) =>
+): number[] =>
   Array.from(
     { length },
     () => Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue
@@ -219,7 +219,7 @@ export const secondsToHoursMinsSecs = (seconds: number): TimeFormat => {
  * @param num2 - The second input number.
  * @returns The LCM of `num1` and `num2`.
  */
-export const lcm = (num1: number, num2: number) =>
+export const lcm = (num1: number, num2: number): number =>
   (num1 * num2) / gcd(num1, num2)
 
 /**
