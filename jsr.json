@@ -1,8 +1,8 @@
 {
   "title": "JSR configuration file Schema",
   "name": "@koji/ichigyou",
-  "description": "one liner functions in typescript",
-  "version": "0.0.7",
+  "description": "one liner(1行) functions in typescript",
+  "version": "0.0.8",
   "exports": "./src/index.ts",
   "publish": {
     "exclude": [
