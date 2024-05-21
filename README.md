@@ -4,7 +4,7 @@
 
 # ichigyou (一行 いちぎょう)
 
-`ichigyo` is a list of typescript one liners
+`ichigyo(1行)` is a collection of one-liner functions in typescript
 
 TSDoc of `ichigyo`
 https://koji.github.io/ichigyou/index.html
