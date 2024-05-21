@@ -6,6 +6,13 @@
 
 `ichigyo(1行)` is a collection of one-liner functions in typescript
 
+54 functions
+- string
+- array
+- number
+- object
+- other
+
 TSDoc of `ichigyo`
 https://koji.github.io/ichigyou/index.html
 
