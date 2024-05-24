@@ -131,7 +131,7 @@ export const intersection = <T>(arr1: T[], arr2: T[]): T[] | null =>
  * @returns {boolean} - Returns true if every element in arr1 is included in arr2, otherwise returns false.
  */
 export const isSubset = <T>(arr1: T[], arr2: T[]): boolean =>
-  arr1.every((item) => arr2.includes(item))
+  arr1.every((item) => new Set(arr2).has(item))
 
 /**
  * Returns the minimum and maximum values in an array.
