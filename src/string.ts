@@ -148,5 +148,5 @@ export const reverseWords = (str: string): string =>
 export const shuffleCharacters = (str: string): string =>
   str
     .split('')
-    .sort(() => 0.5 - Math.random())
+    .sort(() => Math.random() - 0.5)
     .join('')
