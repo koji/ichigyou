@@ -131,3 +131,22 @@ export const countOccurrences = (str: string, targetChar: string): number =>
  */
 export const removeDuplicatedChars = (str: string): string =>
   [...new Set(str.split(''))].join('')
+
+/**
+ * Reverses the order of words in a string.
+ * @param {string} str - The input string.
+ * @returns {string} - The string with the order of words reversed.
+ */
+export const reverseWords = (str: string): string =>
+  str.split(' ').reverse().join(' ')
+
+/**
+ * Shuffles the characters in a string.
+ * @param {string} str - The input string.
+ * @returns {string} - The string with its characters shuffled.
+ */
+export const shuffleCharacters = (str: string): string =>
+  str
+    .split('')
+    .sort(() => Math.random() - 0.5)
+    .join('')

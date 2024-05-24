@@ -3,15 +3,17 @@ import {
   arrToString,
   findIndex,
   first,
+  firstNElements,
   hasEvenNumber,
   hasUniqueValues,
   intersection,
   isSorted,
+  isSubset,
   last,
   lastNElements,
+  minMax,
   removeDuplicated,
   removeElement,
-  firstNElements,
 } from '../array'
 
 const mockStrArr = ['a', 'b', 'c', 'd']
@@ -250,5 +252,42 @@ describe('intersection', () => {
     const arr2 = [4, 5, 6]
     const result = intersection(arr1, arr2)
     expect(result).toBeNull()
+  })
+})
+
+describe('isSubset', () => {
+  it('should return true when arr1 is a subset of arr2', () => {
+    const arr1 = [1, 2, 3]
+    const arr2 = [1, 2, 3, 4, 5]
+    expect(isSubset(arr1, arr2)).toBe(true)
+  })
+
+  it('should return false when arr1 is not a subset of arr2', () => {
+    const arr1 = [1, 2, 3, 6]
+    const arr2 = [1, 2, 3, 4, 5]
+    expect(isSubset(arr1, arr2)).toBe(false)
+  })
+
+  it('should return true when both arr1 and arr2 are empty', () => {
+    const arr1: number[] = []
+    const arr2: number[] = []
+    expect(isSubset(arr1, arr2)).toBe(true)
+  })
+})
+
+describe('minMax', () => {
+  it('should return the correct min and max for a given array', () => {
+    const arr = [1, 2, 3, 4, 5]
+    expect(minMax(arr)).toEqual({ min: 1, max: 5 })
+  })
+
+  it('should return the same min and max for an array with identical elements', () => {
+    const arr = [2, 2, 2, 2, 2]
+    expect(minMax(arr)).toEqual({ min: 2, max: 2 })
+  })
+
+  it('should handle an array with negative numbers', () => {
+    const arr = [-1, -2, -3, -4, -5]
+    expect(minMax(arr)).toEqual({ min: -5, max: -1 })
   })
 })

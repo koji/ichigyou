@@ -122,3 +122,27 @@ export const intersection = <T>(arr1: T[], arr2: T[]): T[] | null =>
   arr1.filter((val) => arr2.includes(val)).length === 0
     ? null
     : arr1.filter((val) => arr2.includes(val))
+
+/**
+ * Checks if the first array is a subset of the second array.
+ * @template T - The type of the array elements.
+ * @param {T[]} arr1 - The first array.
+ * @param {T[]} arr2 - The second array.
+ * @returns {boolean} - Returns true if every element in arr1 is included in arr2, otherwise returns false.
+ */
+export const isSubset = <T>(arr1: T[], arr2: T[]): boolean =>
+  arr1.every((item) => new Set(arr2).has(item))
+
+/**
+ * Returns the minimum and maximum values in an array.
+ * @param {number[]} arr - The input array.
+ * @returns {MinMax} - An object with the minimum and maximum values.
+ */
+interface MinMax {
+  min: number
+  max: number
+}
+export const minMax = (arr: number[]): MinMax => ({
+  min: Math.min(...arr),
+  max: Math.max(...arr),
+})

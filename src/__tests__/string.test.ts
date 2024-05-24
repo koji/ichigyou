@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
 
 import {
-  countTextRows,
   countOccurrences,
+  countTextRows,
   countWords,
   findLongestWord,
   isEmptyString,
@@ -10,11 +10,13 @@ import {
   isPalindromeCaseSensitive,
   isValidEmail,
   isValidURL,
+  removeDuplicatedChars,
   removeWhitespace,
   reverseString,
+  reverseWords,
+  shuffleCharacters,
   toTitleCase,
   truncateString,
-  removeDuplicatedChars,
 } from '../string'
 
 describe('isEmptyString', () => {
@@ -220,5 +222,40 @@ describe('removeDuplicatedChars', () => {
 
   it('preserves order of characters', () => {
     expect(removeDuplicatedChars('abcbca')).toBe('abc')
+  })
+})
+
+describe('reverseWords', () => {
+  it('should reverse the order of words in a string', () => {
+    const str = 'Hello World'
+    expect(reverseWords(str)).toBe('World Hello')
+  })
+
+  it('should handle a string with a single word', () => {
+    const str = 'Hello'
+    expect(reverseWords(str)).toBe('Hello')
+  })
+
+  it('should handle an empty string', () => {
+    const str = ''
+    expect(reverseWords(str)).toBe('')
+  })
+})
+
+describe('shuffleCharacters', () => {
+  it('should return a string with the same length as the input', () => {
+    const str = 'Hello World'
+    expect(shuffleCharacters(str).length).toBe(str.length)
+  })
+
+  it('should return a string with the same characters as the input', () => {
+    const str = 'Hello World'
+    const shuffled = shuffleCharacters(str)
+    expect([...str].sort().join('')).toBe([...shuffled].sort().join(''))
+  })
+
+  it('should handle an empty string', () => {
+    const str = ''
+    expect(shuffleCharacters(str)).toBe('')
   })
 })
