@@ -268,5 +268,10 @@ export const isSortedDescending = (arr: number[]): boolean =>
  * fibonacci(5); // returns 5
  * fibonacci(7); // returns 13
  */
-export const fibonacci = (n: number): number =>
-  n <= 1 ? n : fibonacci(n - 1) + fibonacci(n - 2)
+export const fibonacciMemo = (
+  n: number,
+  memo: Record<number, number> = {}
+): number =>
+  memo[n] ??
+  (memo[n] =
+    n <= 1 ? n : fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo))
