@@ -259,3 +259,14 @@ export const binaryToDecimalWithoutParseInt = (binary: string): number =>
  */
 export const isSortedDescending = (arr: number[]): boolean =>
   arr.every((el, i) => i === 0 || el <= arr[i - 1])
+
+/**
+ * Calculates the nth Fibonacci number.
+ * @param n - The index in the Fibonacci sequence (non-negative integer).
+ * @returns The nth Fibonacci number.
+ * @example
+ * fibonacci(5); // returns 5
+ * fibonacci(7); // returns 13
+ */
+export const fibonacci = (n: number): number =>
+  n <= 1 ? n : fibonacci(n - 1) + fibonacci(n - 2)

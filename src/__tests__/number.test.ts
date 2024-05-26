@@ -7,6 +7,7 @@ import {
   degToRad,
   factorial,
   feetToMeters,
+  fibonacci,
   findMax,
   findMin,
   gcd,
@@ -351,5 +352,35 @@ describe('isSortedDescending', () => {
 
   it('returns true for a single-element array', () => {
     expect(isSortedDescending([42])).toBe(true)
+  })
+})
+
+describe('fibonacci', () => {
+  it('should return 0 for the 0th index', () => {
+    expect(fibonacci(0)).toBe(0)
+  })
+
+  it('should return 1 for the 1st index', () => {
+    expect(fibonacci(1)).toBe(1)
+  })
+
+  it('should return 1 for the 2nd index', () => {
+    expect(fibonacci(2)).toBe(1)
+  })
+
+  it('should return 2 for the 3rd index', () => {
+    expect(fibonacci(3)).toBe(2)
+  })
+
+  it('should return 5 for the 5th index', () => {
+    expect(fibonacci(5)).toBe(5)
+  })
+
+  it('should return 5 for the 5th index', () => {
+    expect(fibonacci(7)).toBe(13)
+  })
+
+  it('should handle large indices', () => {
+    expect(fibonacci(10)).toBe(55)
   })
 })
