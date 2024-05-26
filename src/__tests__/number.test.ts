@@ -376,7 +376,7 @@ describe('fibonacciMemo', () => {
     expect(fibonacciMemo(5)).toBe(5)
   })
 
-  it('should return 5 for the 5th index', () => {
+  it('should return 13 for the 7th index', () => {
     expect(fibonacciMemo(7)).toBe(13)
   })
 
