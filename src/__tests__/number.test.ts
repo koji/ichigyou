@@ -15,6 +15,7 @@ import {
   isOdd,
   isPrime,
   isSortedDescending,
+  isTriangularNumber,
   lcm,
   mean,
   metersToFeet,
@@ -382,5 +383,28 @@ describe('fibonacciMemo', () => {
 
   it('should handle large indices', () => {
     expect(fibonacciMemo(10)).toBe(55)
+  })
+})
+
+
+describe('isTriangularNumber', () => {
+  it('should return true for triangular numbers', () => {
+    expect(isTriangularNumber(1)).toBe(true) // 1st triangular number
+    expect(isTriangularNumber(3)).toBe(true) // 2nd triangular number
+    expect(isTriangularNumber(6)).toBe(true) // 3rd triangular number
+    expect(isTriangularNumber(10)).toBe(true) // 4th triangular number
+    expect(isTriangularNumber(15)).toBe(true) // 5th triangular number
+    expect(isTriangularNumber(21)).toBe(true) // 6th triangular number
+    expect(isTriangularNumber(28)).toBe(true) // 7th triangular number
+  })
+
+  it('should return false for non-triangular numbers', () => {
+    expect(isTriangularNumber(2)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(4)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(7)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(8)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(9)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(11)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(14)).toBe(false) // Not a triangular number
   })
 })
