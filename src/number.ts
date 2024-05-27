@@ -275,3 +275,13 @@ export const fibonacciMemo = (
   memo[n] ??
   (memo[n] =
     n <= 1 ? n : fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo))
+
+/**
+ * Checks if a given number is a triangular number.
+ * Triangular numbers are of the form n(n+1)/2, where n is a non-negative integer.
+ *
+ * @param num - The number to check.
+ * @returns `true` if `num` is a triangular number, `false` otherwise.
+ */
+export const isTriangularNumber = (n: number): boolean =>
+  Number.isInteger((Math.sqrt(8 * n + 1) - 1) * 0.5)
