@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { hasProperty, isEmptyObject } from '../object'
+import { hasProperty, isEmptyObject, sortByProperty } from '../object'
 
 describe('hasProperty', () => {
   it('should return true if property exists in the object', () => {
@@ -34,5 +34,37 @@ describe('isEmptyObject', () => {
     const obj = { key: 'value' }
     const result = isEmptyObject(obj)
     expect(result).toBe(false)
+  })
+})
+
+describe('sortByProperty', () => {
+  it('should sort an array of objects by a numeric property', () => {
+    const arr = [
+      { name: 'Alice', age: 30 },
+      { name: 'Bob', age: 20 },
+      { name: 'Charlie', age: 25 },
+    ]
+    const sorted = sortByProperty(arr, 'age')
+    expect(sorted).to.deep.equal([
+      { name: 'Bob', age: 20 },
+      { name: 'Charlie', age: 25 },
+      { name: 'Alice', age: 30 },
+    ])
+  })
+  it('should sort an array of objects by a numeric property', () => {
+    const arr = [{ name: 'Charlie' }, { name: 'Alice' }, { name: 'Bob' }]
+    const sorted = sortByProperty(arr, 'name')
+    expect(sorted).to.deep.equal([
+      { name: 'Alice' },
+      { name: 'Bob' },
+      { name: 'Charlie' },
+    ])
+  })
+
+  it('should throw an error when property types are not string or number', () => {
+    const arr = [{ prop: true }, { prop: false }]
+    expect(() => sortByProperty(arr, 'prop')).toThrowError(
+      'Unsupported property types for sorting. Only number and string types are supported.'
+    )
   })
 })

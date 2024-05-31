@@ -5,6 +5,7 @@ import {
   binaryToDecimal,
   binaryToDecimalWithoutParseInt,
   degToRad,
+  exponential,
   factorial,
   feetToMeters,
   fibonacciMemo,
@@ -15,6 +16,7 @@ import {
   isOdd,
   isPrime,
   isSortedDescending,
+  isTriangularNumber,
   lcm,
   mean,
   metersToFeet,
@@ -382,5 +384,53 @@ describe('fibonacciMemo', () => {
 
   it('should handle large indices', () => {
     expect(fibonacciMemo(10)).toBe(55)
+  })
+})
+
+describe('isTriangularNumber', () => {
+  it('should return true for triangular numbers', () => {
+    expect(isTriangularNumber(1)).toBe(true) // 1st triangular number
+    expect(isTriangularNumber(3)).toBe(true) // 2nd triangular number
+    expect(isTriangularNumber(6)).toBe(true) // 3rd triangular number
+    expect(isTriangularNumber(10)).toBe(true) // 4th triangular number
+    expect(isTriangularNumber(15)).toBe(true) // 5th triangular number
+    expect(isTriangularNumber(21)).toBe(true) // 6th triangular number
+    expect(isTriangularNumber(28)).toBe(true) // 7th triangular number
+  })
+
+  it('should return false for non-triangular numbers', () => {
+    expect(isTriangularNumber(2)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(4)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(7)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(8)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(9)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(11)).toBe(false) // Not a triangular number
+    expect(isTriangularNumber(14)).toBe(false) // Not a triangular number
+  })
+})
+
+describe('exponential', () => {
+  it('should correctly calculate the exponential of positive numbers', () => {
+    expect(exponential(2, 3)).to.equal(8)
+    expect(exponential(5, 4)).to.equal(625)
+  })
+
+  it('should correctly calculate the exponential of negative numbers', () => {
+    expect(exponential(-2, 3)).to.equal(-8)
+    expect(exponential(-3, 2)).to.equal(9)
+  })
+
+  it('should return 1 for any base with exponent 0', () => {
+    expect(exponential(2, 0)).to.equal(1)
+    expect(exponential(-5, 0)).to.equal(1)
+  })
+
+  it('should return 0 for base 0 with any exponent except 0', () => {
+    expect(exponential(0, 2)).to.equal(0)
+    expect(exponential(0, -3)).to.equal(Infinity)
+  })
+
+  it('should return NaN for base 0 with exponent 0', () => {
+    expect(exponential(0, 0)).to.equal(1)
   })
 })
