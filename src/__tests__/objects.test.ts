@@ -53,11 +53,11 @@ describe('sortByProperty', () => {
   })
   it('should sort an array of objects by a numeric property', () => {
     const arr = [{ name: 'Charlie' }, { name: 'Alice' }, { name: 'Bob' }]
-    const sorted = sortByProperty(arr, 'age')
+    const sorted = sortByProperty(arr, 'name')
     expect(sorted).to.deep.equal([
-      { name: 'Charlie' },
       { name: 'Alice' },
       { name: 'Bob' },
+      { name: 'Charlie' },
     ])
   })
 })
