@@ -17,7 +17,7 @@ export const hasProperty = <T extends keyof any>(
  * @param obj - The object to be checked.
  * @returns `true` if the object is empty, `false` otherwise.
  */
-export const isEmptyObject = (obj: Object): boolean =>
+export const isEmptyObject = (obj: Record<string, unknown>): boolean =>
   Object.keys(obj).length === 0
 
 /**
