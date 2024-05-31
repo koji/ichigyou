@@ -34,7 +34,9 @@ export function sortByProperty<T>(arr: T[], prop: string): T[] {
     const valB = b[prop];
     if (typeof valA === 'number' && typeof valB === 'number') {
       return valA - valB;
+    } else if (typeof valA === 'string' && typeof valB === 'string') {
+      return valA.localeCompare(valB);
     }
-    return 0; // or throw an error, or handle as strings, etc.
+    throw new Error('Unsupported property types for sorting');
   })
 }
