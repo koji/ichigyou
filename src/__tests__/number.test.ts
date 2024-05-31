@@ -5,6 +5,7 @@ import {
   binaryToDecimal,
   binaryToDecimalWithoutParseInt,
   degToRad,
+  exponential,
   factorial,
   feetToMeters,
   fibonacciMemo,
@@ -386,7 +387,6 @@ describe('fibonacciMemo', () => {
   })
 })
 
-
 describe('isTriangularNumber', () => {
   it('should return true for triangular numbers', () => {
     expect(isTriangularNumber(1)).toBe(true) // 1st triangular number
@@ -406,5 +406,31 @@ describe('isTriangularNumber', () => {
     expect(isTriangularNumber(9)).toBe(false) // Not a triangular number
     expect(isTriangularNumber(11)).toBe(false) // Not a triangular number
     expect(isTriangularNumber(14)).toBe(false) // Not a triangular number
+  })
+})
+
+describe('exponential', () => {
+  it('should correctly calculate the exponential of positive numbers', () => {
+    expect(exponential(2, 3)).to.equal(8)
+    expect(exponential(5, 4)).to.equal(625)
+  })
+
+  it('should correctly calculate the exponential of negative numbers', () => {
+    expect(exponential(-2, 3)).to.equal(-8)
+    expect(exponential(-3, 2)).to.equal(9)
+  })
+
+  it('should return 1 for any base with exponent 0', () => {
+    expect(exponential(2, 0)).to.equal(1)
+    expect(exponential(-5, 0)).to.equal(1)
+  })
+
+  it('should return 0 for base 0 with any exponent except 0', () => {
+    expect(exponential(0, 2)).to.equal(0)
+    expect(exponential(0, -3)).to.equal(Infinity)
+  })
+
+  it('should return NaN for base 0 with exponent 0', () => {
+    expect(exponential(0, 0)).to.equal(1)
   })
 })

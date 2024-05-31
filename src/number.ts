@@ -285,3 +285,13 @@ export const fibonacciMemo = (
  */
 export const isTriangularNumber = (n: number): boolean =>
   Number.isInteger((Math.sqrt(8 * n + 1) - 1) * 0.5)
+
+/**
+ * Calculates the result of raising a base number to an exponent.
+ *
+ * @param {number} base - The base number.
+ * @param {number} exponent - The exponent to which the base is raised.
+ * @returns {number} - The result of base raised to the exponent.
+ */
+export const exponential = (base: number, exponent: number): number =>
+  base ** exponent
