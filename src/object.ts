@@ -37,6 +37,6 @@ export function sortByProperty<T>(arr: T[], prop: string): T[] {
     } else if (typeof valA === 'string' && typeof valB === 'string') {
       return valA.localeCompare(valB);
     }
-    throw new Error('Unsupported property types for sorting');
+    throw new Error('Unsupported property types for sorting. Only number and string types are supported.');
   })
 }
