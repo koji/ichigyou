@@ -51,4 +51,13 @@ describe('sortByProperty', () => {
       { name: 'Alice', age: 30 },
     ])
   })
+  it('should sort an array of objects by a numeric property', () => {
+    const arr = [{ name: 'Charlie' }, { name: 'Alice' }, { name: 'Bob' }]
+    const sorted = sortByProperty(arr, 'age')
+    expect(sorted).to.deep.equal([
+      { name: 'Charlie' },
+      { name: 'Alice' },
+      { name: 'Bob' },
+    ])
+  })
 })
