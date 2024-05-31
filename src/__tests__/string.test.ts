@@ -5,6 +5,7 @@ import {
   countTextRows,
   countWords,
   findLongestWord,
+  isAnagram,
   isEmptyString,
   isNumeric,
   isPalindromeCaseSensitive,
@@ -257,5 +258,15 @@ describe('shuffleCharacters', () => {
   it('should handle an empty string', () => {
     const str = ''
     expect(shuffleCharacters(str)).toBe('')
+  })
+})
+
+describe('isAnagram function', () => {
+  it('should return true for anagrams', () => {
+    expect(isAnagram('listen', 'silent')).toBe(true)
+  })
+
+  it('should return false for non-anagrams', () => {
+    expect(isAnagram('hello', 'world')).toBe(false)
   })
 })

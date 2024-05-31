@@ -150,3 +150,15 @@ export const shuffleCharacters = (str: string): string =>
     .split('')
     .sort(() => Math.random() - 0.5)
     .join('')
+
+/**
+ * Checks if two strings are anagrams of each other.
+ * An anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+ * typically using all the original letters exactly once.
+ *
+ * @param {string} str1 - The first string.
+ * @param {string} str2 - The second string.
+ * @returns {boolean} - Returns true if the two strings are anagrams of each other, false otherwise.
+ */
+export const isAnagram = (str1: string, str2: string): boolean =>
+  str1.split('').sort().join('') === str2.split('').sort().join('')
