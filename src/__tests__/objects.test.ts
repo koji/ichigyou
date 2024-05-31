@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { hasProperty, isEmptyObject } from '../object'
+import { hasProperty, isEmptyObject, sortByProperty } from '../object'
 
 describe('hasProperty', () => {
   it('should return true if property exists in the object', () => {
@@ -34,5 +34,21 @@ describe('isEmptyObject', () => {
     const obj = { key: 'value' }
     const result = isEmptyObject(obj)
     expect(result).toBe(false)
+  })
+})
+
+describe('sortByProperty', () => {
+  it('should sort an array of objects by a numeric property', () => {
+    const arr = [
+      { name: 'Alice', age: 30 },
+      { name: 'Bob', age: 20 },
+      { name: 'Charlie', age: 25 },
+    ]
+    const sorted = sortByProperty(arr, 'age')
+    expect(sorted).to.deep.equal([
+      { name: 'Bob', age: 20 },
+      { name: 'Charlie', age: 25 },
+      { name: 'Alice', age: 30 },
+    ])
   })
 })

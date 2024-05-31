@@ -19,3 +19,15 @@ export const hasProperty = <T extends keyof any>(
  */
 export const isEmptyObject = (obj: Object): boolean =>
   Object.keys(obj).length === 0
+
+/**
+ * Sorts an array of objects based on a specified property.
+ *
+ * @template T - The type of the objects in the array.
+ * @param {T[]} arr - The array to sort.
+ * @param {string} prop - The property to sort by.
+ * @returns {T[]} - The sorted array.
+ */
+export function sortByProperty<T>(arr: T[], prop: string): T[] {
+  return arr.sort((a: any, b: any) => a[prop] - b[prop])
+}
