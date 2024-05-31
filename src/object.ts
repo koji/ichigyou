@@ -29,5 +29,12 @@ export const isEmptyObject = (obj: Object): boolean =>
  * @returns {T[]} - The sorted array.
  */
 export function sortByProperty<T>(arr: T[], prop: string): T[] {
-  return arr.sort((a: any, b: any) => a[prop] - b[prop])
+  return arr.sort((a: T, b: T) => {
+    const valA = a[prop];
+    const valB = b[prop];
+    if (typeof valA === 'number' && typeof valB === 'number') {
+      return valA - valB;
+    }
+    return 0; // or throw an error, or handle as strings, etc.
+  })
 }
