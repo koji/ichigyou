@@ -60,4 +60,11 @@ describe('sortByProperty', () => {
       { name: 'Charlie' },
     ])
   })
+
+  it('should throw an error when property types are not string or number', () => {
+    const arr = [{ prop: true }, { prop: false }]
+    expect(() => sortByProperty(arr, 'prop')).toThrowError(
+      'Unsupported property types for sorting. Only number and string types are supported.'
+    )
+  })
 })

@@ -30,13 +30,15 @@ export const isEmptyObject = (obj: Record<string, unknown>): boolean =>
  */
 export function sortByProperty<T>(arr: T[], prop: string): T[] {
   return arr.sort((a: T, b: T) => {
-    const valA = a[prop];
-    const valB = b[prop];
+    const valA = a[prop]
+    const valB = b[prop]
     if (typeof valA === 'number' && typeof valB === 'number') {
-      return valA - valB;
+      return valA - valB
     } else if (typeof valA === 'string' && typeof valB === 'string') {
-      return valA.localeCompare(valB);
+      return valA.localeCompare(valB)
     }
-    throw new Error('Unsupported property types for sorting. Only number and string types are supported.');
+    throw new Error(
+      'Unsupported property types for sorting. Only number and string types are supported.'
+    )
   })
 }
