@@ -162,3 +162,10 @@ export const shuffleCharacters = (str: string): string =>
  */
 export const isAnagram = (str1: string, str2: string): boolean =>
   str1.split('').sort().join('') === str2.split('').sort().join('')
+
+/**
+ * Removes all vowels from a given string.
+ * @param str - The input string from which vowels are to be removed.
+ * @returns A new string with all vowels (both lower-case and upper-case) removed.
+ */
+export const removeVowels = (str: string): string => str.replace(/[aeiouAEIOU]/g, '')
