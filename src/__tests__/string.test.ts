@@ -12,6 +12,7 @@ import {
   isValidEmail,
   isValidURL,
   removeDuplicatedChars,
+  removeVowels,
   removeWhitespace,
   reverseString,
   reverseWords,
@@ -268,5 +269,14 @@ describe('isAnagram function', () => {
 
   it('should return false for non-anagrams', () => {
     expect(isAnagram('hello', 'world')).toBe(false)
+  })
+})
+
+describe('removeVowels', () => {
+  it('removes all vowels from a string', () => {
+    expect(removeVowels('Hello World')).toBe('Hll Wrld')
+    expect(removeVowels('AEIOUaeiou')).toBe('')
+    expect(removeVowels('Microsoft Copilot')).toBe('Mcrsft Cplt')
+    expect(removeVowels('')).toBe('')
   })
 })
