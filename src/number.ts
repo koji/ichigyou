@@ -305,6 +305,8 @@ export const exponential = (base: number, exponent: number): number =>
 export const isNeonNumber = (num: number): boolean => {
   return (
     num ===
-    [...String(num ** 2)].map(Number).reduce((sum, digit) => sum + digit, 0)
+    String(num ** 2)
+      .split('')
+      .reduce((sum, digit) => sum + parseInt(digit, 10), 0)
   )
 }
