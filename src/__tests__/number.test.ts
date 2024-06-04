@@ -13,6 +13,7 @@ import {
   findMin,
   gcd,
   genRandomArray,
+  isNeonNumber,
   isOdd,
   isPrime,
   isSortedDescending,
@@ -432,5 +433,23 @@ describe('exponential', () => {
 
   it('should return NaN for base 0 with exponent 0', () => {
     expect(exponential(0, 0)).to.equal(1)
+  })
+})
+
+describe('isNeonNumber', () => {
+  it('9 is a Neon Number', () => {
+    expect(isNeonNumber(9)).toBe(true)
+  })
+
+  it('7 is not a Neon Number', () => {
+    expect(isNeonNumber(7)).toBe(false)
+  })
+
+  it('1 is a Neon Number', () => {
+    expect(isNeonNumber(1)).toBe(true)
+  })
+
+  it('0 is a Neon Number', () => {
+    expect(isNeonNumber(0)).toBe(true)
   })
 })
