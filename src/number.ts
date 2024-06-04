@@ -295,3 +295,18 @@ export const isTriangularNumber = (n: number): boolean =>
  */
 export const exponential = (base: number, exponent: number): number =>
   base ** exponent
+
+/**
+ * Checks if a number is a Neon Number.
+ * A Neon Number is a number where the sum of digits of the square of the number is equal to the number.
+ * @param {number} num - The number to check.
+ * @returns {boolean} True if the number is a Neon Number, false otherwise.
+ */
+export const isNeonNumber = (num: number): boolean => {
+  return (
+    num ===
+    String(num ** 2)
+      .split('')
+      .reduce((sum, digit) => sum + parseInt(digit, 10), 0)
+  )
+}
