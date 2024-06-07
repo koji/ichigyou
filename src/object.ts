@@ -28,7 +28,7 @@ export const isEmptyObject = (obj: Record<string, unknown>): boolean =>
  * @param {string} prop - The property to sort by.
  * @returns {T[]} - The sorted array.
  */
-export function sortByProperty<T>(arr: T[], prop: string): T[] {
+export function sortByProperty<T extends {[key: string]: number | string}>(arr: T[], prop: string): T[] {
   return arr.sort((a: T, b: T) => {
     const valA = a[prop]
     const valB = b[prop]
