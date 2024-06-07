@@ -4,6 +4,7 @@ import {
   average,
   binaryToDecimal,
   binaryToDecimalWithoutParseInt,
+  decimalToOctal,
   degToRad,
   exponential,
   factorial,
@@ -462,3 +463,10 @@ describe('median', () => {
     expect(result).to.equal(4.5)
   })
 })
+
+describe('decimalToOctal', () => {
+  it('should return the correct octal representation for a decimal number', () => {
+    expect( decimalToOctal(8)).to.equal('10')
+    expect( decimalToOctal(27)).to.equal('33')
+  });
+});
