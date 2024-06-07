@@ -310,3 +310,18 @@ export const isNeonNumber = (num: number): boolean => {
       .reduce((sum, digit) => sum + parseInt(digit, 10), 0)
   )
 }
+
+
+/**
+ * Calculates the median of an array of numbers.
+ * @param arr - The array of numbers.
+ * @returns The median of the array. If the array length is even, it returns the average of the two middle numbers. Otherwise, it returns the middle number.
+ */
+export const median = (arr: number[]): number => {
+  const sortedArr = sortNumAsc(arr);
+  const midIndex = Math.floor(sortedArr.length / 2);
+
+  return sortedArr.length % 2 === 0 
+    ? (sortedArr[midIndex - 1] + sortedArr[midIndex]) / 2 
+    : sortedArr[midIndex];
+}
