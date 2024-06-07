@@ -325,3 +325,10 @@ export const median = (arr: number[]): number => {
     ? (sortedArr[midIndex - 1] + sortedArr[midIndex]) / 2 
     : sortedArr[midIndex];
 }
+
+/**
+ * Converts a decimal number to its octal representation.
+ * @param decimal - The decimal number to be converted.
+ * @returns The octal representation of the decimal number as a string.
+ */
+export const decimalToOctal = (decimal: number): string => decimal.toString(8)
