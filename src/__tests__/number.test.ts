@@ -20,6 +20,7 @@ import {
   isTriangularNumber,
   lcm,
   mean,
+  median,
   metersToFeet,
   minsToHoursAndMins,
   randomNum,
@@ -451,5 +452,13 @@ describe('isNeonNumber', () => {
 
   it('0 is a Neon Number', () => {
     expect(isNeonNumber(0)).toBe(true)
+  })
+})
+
+describe('median', () => {
+  it('should return the correct median for an array of numbers', () => {
+    const arr = [5, 2, 9, 1, 7, 4]
+    const result = median(arr)
+    expect(result).to.equal(4.5)
   })
 })
