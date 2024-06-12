@@ -8,6 +8,7 @@ import {
   degToRad,
   exponential,
   factorial,
+  factors,
   feetToMeters,
   fibonacciMemo,
   findMax,
@@ -466,7 +467,25 @@ describe('median', () => {
 
 describe('decimalToOctal', () => {
   it('should return the correct octal representation for a decimal number', () => {
-    expect( decimalToOctal(8)).to.equal('10')
-    expect( decimalToOctal(27)).to.equal('33')
-  });
-});
+    expect(decimalToOctal(8)).to.equal('10')
+    expect(decimalToOctal(27)).to.equal('33')
+  })
+})
+
+describe('factors', () => {
+  it('should return an empty array for prime numbers', () => {
+    expect(factors(7)).toEqual([])
+    expect(factors(11)).toEqual([])
+  })
+
+  it('should return an array of factors for composite numbers', () => {
+    expect(factors(12)).toEqual([2, 3, 4, 6])
+    expect(factors(20)).toEqual([2, 4, 5, 10])
+  })
+
+  it('should handle edge cases', () => {
+    expect(factors(1)).toEqual([])
+    expect(factors(0)).toEqual([])
+    expect(factors(-5)).toEqual([])
+  })
+})

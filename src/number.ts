@@ -311,19 +311,18 @@ export const isNeonNumber = (num: number): boolean => {
   )
 }
 
-
 /**
  * Calculates the median of an array of numbers.
  * @param arr - The array of numbers.
  * @returns The median of the array. If the array length is even, it returns the average of the two middle numbers. Otherwise, it returns the middle number.
  */
 export const median = (arr: number[]): number => {
-  const sortedArr = sortNumAsc(arr);
-  const midIndex = Math.floor(sortedArr.length / 2);
+  const sortedArr = sortNumAsc(arr)
+  const midIndex = Math.floor(sortedArr.length / 2)
 
-  return sortedArr.length % 2 === 0 
-    ? (sortedArr[midIndex - 1] + sortedArr[midIndex]) / 2 
-    : sortedArr[midIndex];
+  return sortedArr.length % 2 === 0
+    ? (sortedArr[midIndex - 1] + sortedArr[midIndex]) / 2
+    : sortedArr[midIndex]
 }
 
 /**
@@ -332,3 +331,19 @@ export const median = (arr: number[]): number => {
  * @returns The octal representation of the decimal number as a string.
  */
 export const decimalToOctal = (decimal: number): string => decimal.toString(8)
+
+/**
+ * Returns an array of factors for a given number.
+ *
+ * @param {number} num - The number for which to find factors.
+ * @returns {number[]} An array of factors for the given number.
+ *
+ * @example
+ * factors(12); // Returns [2, 3, 4, 6]
+ * factors(7); // Returns []
+ */
+export const factors = (num: number): number[] => {
+  return Array.from({ length: num - 2 }, (_, i) => i + 2).filter(
+    (factor) => num % factor === 0
+  )
+}
