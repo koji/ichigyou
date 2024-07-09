@@ -19,6 +19,7 @@ import {
   shuffleCharacters,
   toTitleCase,
   truncateString,
+  countLetters,
 } from '../string'
 
 describe('isEmptyString', () => {
@@ -278,5 +279,22 @@ describe('removeVowels', () => {
     expect(removeVowels('AEIOUaeiou')).toBe('')
     expect(removeVowels('Microsoft Copilot')).toBe('Mcrsft Cplt')
     expect(removeVowels('')).toBe('')
+  })
+})
+
+describe('countLetters', () => {
+  it('returns an object with letter counts', () => {
+    const result = countLetters('Hello, World!')
+
+    // Assert the expected behavior
+    expect(result).toEqual({
+      h: 1,
+      e: 1,
+      l: 3,
+      o: 2,
+      w: 1,
+      r: 1,
+      d: 1,
+    })
   })
 })

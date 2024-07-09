@@ -30,6 +30,7 @@ import {
   sortNumDesc,
   standardDeviation,
   sum,
+  isPrimeFactor,
 } from '../number'
 
 const mockNumData = [1, 100, 10, 5, 8, 0, 9, -100]
@@ -466,7 +467,19 @@ describe('median', () => {
 
 describe('decimalToOctal', () => {
   it('should return the correct octal representation for a decimal number', () => {
-    expect( decimalToOctal(8)).to.equal('10')
-    expect( decimalToOctal(27)).to.equal('33')
-  });
-});
+    expect(decimalToOctal(8)).to.equal('10')
+    expect(decimalToOctal(27)).to.equal('33')
+  })
+})
+
+describe('isPrimeFactor', () => {
+  it('returns true for valid prime factors', () => {
+    const result = isPrimeFactor(10, 2)
+    expect(result).toBe(true)
+  })
+
+  it('returns false for non-prime factors', () => {
+    const result = isPrimeFactor(20, 3)
+    expect(result).toBe(false)
+  })
+})
