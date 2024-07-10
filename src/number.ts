@@ -311,19 +311,18 @@ export const isNeonNumber = (num: number): boolean => {
   )
 }
 
-
 /**
  * Calculates the median of an array of numbers.
  * @param arr - The array of numbers.
  * @returns The median of the array. If the array length is even, it returns the average of the two middle numbers. Otherwise, it returns the middle number.
  */
 export const median = (arr: number[]): number => {
-  const sortedArr = sortNumAsc(arr);
-  const midIndex = Math.floor(sortedArr.length / 2);
+  const sortedArr = sortNumAsc(arr)
+  const midIndex = Math.floor(sortedArr.length / 2)
 
-  return sortedArr.length % 2 === 0 
-    ? (sortedArr[midIndex - 1] + sortedArr[midIndex]) / 2 
-    : sortedArr[midIndex];
+  return sortedArr.length % 2 === 0
+    ? (sortedArr[midIndex - 1] + sortedArr[midIndex]) / 2
+    : sortedArr[midIndex]
 }
 
 /**
@@ -332,3 +331,12 @@ export const median = (arr: number[]): number => {
  * @returns The octal representation of the decimal number as a string.
  */
 export const decimalToOctal = (decimal: number): string => decimal.toString(8)
+
+/**
+ * Checks if a given number is a prime factor of another number.
+ * @param num - The number to check for prime factor status.
+ * @param factor - The potential prime factor.
+ * @returns `true` if `factor` is a prime factor of `num`, otherwise `false`.
+ */
+export const isPrimeFactor = (num: number, factor: number): boolean =>
+  num % factor === 0 && isPrime(factor)

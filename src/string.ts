@@ -168,4 +168,20 @@ export const isAnagram = (str1: string, str2: string): boolean =>
  * @param str - The input string from which vowels are to be removed.
  * @returns A new string with all vowels (both lower-case and upper-case) removed.
  */
-export const removeVowels = (str: string): string => str.replace(/[aeiouAEIOU]/g, '')
+export const removeVowels = (str: string): string =>
+  str.replace(/[aeiouAEIOU]/g, '')
+
+/**
+ * Counts the occurrences of each letter in a given string.
+ * @param str - The input string.
+ * @returns An object where keys represent letters (lowercase) and values represent their counts.
+ */
+export const countLetters = (str: string): { [key: string]: number } => {
+  const letters = str.toLowerCase().match(/[a-z]/g)
+  if (letters == null) return {}
+  const letterCount: { [key: string]: number } = {}
+  for (const letter of letters) {
+    letterCount[letter] = (letterCount[letter] || 0) + 1
+  }
+  return letterCount
+}
