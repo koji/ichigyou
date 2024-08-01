@@ -20,6 +20,7 @@ export const currentMonth = (): number => new Date().getMonth() + 1
 
 /**
  * Gets OS information.
+ * 'aix', 'darwin', 'freebsd', 'linux', 'openbsd', 'sunos', and 'win32'.
  * @returns The OS information as a string.
  */
 import os from 'os'
