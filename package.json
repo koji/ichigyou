@@ -32,10 +32,10 @@
     "vitest"
   ],
   "devDependencies": {
-    "@types/node": "^22.1.0",
+    "@types/node": "^22.10.2",
     "typedoc": "^0.25.13",
-    "typescript": "^5.5.4",
-    "vite": "^5.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
     "vitest": "2.0.1"
   },
   "exports": {
