@@ -6,7 +6,8 @@
     "build": "vite build && tsc",
     "test": "vitest",
     "doc": "typedoc --entryPointStrategy expand ./src --exclude **/*.test.ts",
-    "publish-jsr": "npx jsr publish"
+    "publish-jsr": "npx jsr publish",
+    "mint:dev": "cd docs && mint dev"
   },
   "repository": {
     "type": "git",
