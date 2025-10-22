@@ -1,80 +1,89 @@
 ---
 title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+description: "Get started with ichigyou - a collection of one-liner functions in TypeScript"
 ---
 
-## Get started in three steps
+## About ichigyou
 
-Get your documentation site running locally and make your first customization.
+`ichigyou (一行 いちぎょう)` is a collection of one-liner functions in TypeScript.
 
-### Step 1: Set up your local environment
+**54 functions** across 5 categories:
+- String
+- Array
+- Number
+- Object
+- Other
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+## Installation
 
-### Step 2: Deploy your changes
+Install ichigyou using your preferred package manager:
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+<CodeGroup>
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+```bash npm
+npm i ichigyou
+```
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+```bash yarn
+yarn add ichigyou
+```
 
-### Step 3: Go live
+```bash pnpm
+pnpm i ichigyou
+```
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+</CodeGroup>
 
-## Next steps
+## Quick Example
 
-Now that you have your docs running, explore these key features:
+Here's a simple example of using ichigyou functions:
+
+```typescript
+import { reverseString, sum, hasProperty } from 'ichigyou';
+
+// String operations
+const reversed = reverseString('hello');
+console.log(reversed); // 'olleh'
+
+// Array/Number operations
+const total = sum([1, 2, 3, 4, 5]);
+console.log(total); // 15
+
+// Object operations
+const obj = { name: 'John', age: 30 };
+console.log(hasProperty(obj, 'name')); // true
+```
+
+## Explore Functions
+
+Browse through our comprehensive function library:
 
 <CardGroup cols={2}>
 
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
+<Card title="String Functions" icon="text" href="/string/reverseString">
+  19 string manipulation functions including reverseString, isValidEmail, and more.
 </Card>
 
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
+<Card title="Array Functions" icon="list" href="/array/first">
+  14 array utility functions like first, last, removeDuplicated, and more.
 </Card>
 
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
+<Card title="Number Functions" icon="calculator" href="/number/sum">
+  10+ number operations including sum, average, factorial, and more.
 </Card>
 
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
+<Card title="Object Functions" icon="cube" href="/object/hasProperty">
+  Object utilities like hasProperty, isEmptyObject, and sortByProperty.
 </Card>
 
 </CardGroup>
 
+## Documentation
+
+For full API documentation with detailed examples, visit:
+- [TSDoc Documentation](https://koji.github.io/ichigyou/index.html)
+- [GitHub Repository](https://github.com/koji/ichigyou)
+
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+  All functions are written as one-liners in TypeScript, making them lightweight and easy to understand.
 </Note>

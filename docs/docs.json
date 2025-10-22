@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "ichigyou (一行 いちぎょう) functions documentation",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -22,19 +22,77 @@
             ]
           },
           {
-            "group": "Customization",
+            "group": "Array",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "array/arrToString",
+              "array/findIndex",
+              "array/first",
+              "array/firstNElements",
+              "array/hasEvenNumber",
+              "array/hasUniqueValues",
+              "array/intersection",
+              "array/isSorted",
+              "array/isSubset",
+              "array/last",
+              "array/lastNElements",
+              "array/minMax",
+              "array/removeDuplicated",
+              "array/removeElement"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Number",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "number/average",
+              "number/binaryToDecimal",
+              "number/decimalToOctal",
+              "number/degToRad",
+              "number/exponential",
+              "number/factorial",
+              "number/findMax",
+              "number/mean",
+              "number/median",
+              "number/sum"
+            ]
+          },
+          {
+            "group": "Object",
+            "pages": [
+              "object/hasProperty",
+              "object/isEmptyObject",
+              "object/sortByProperty"
+            ]
+          },
+          {
+            "group": "Other",
+            "pages": [
+              "other/currentMonth",
+              "other/getOS",
+              "other/moveToTop"
+            ]
+          },
+          {
+            "group": "String",
+            "pages": [
+              "string/countLetters",
+              "string/countOccurrences",
+              "string/countTextRows",
+              "string/countWords",
+              "string/findLongestWord",
+              "string/isAnagram",
+              "string/isEmptyString",
+              "string/isNumeric",
+              "string/isPalindromeCaseSensitive",
+              "string/isValidEmail",
+              "string/isValidURL",
+              "string/removeDuplicatedChars",
+              "string/removeVowels",
+              "string/removeWhitespace",
+              "string/reverseString",
+              "string/reverseWords",
+              "string/shuffleCharacters",
+              "string/toTitleCase",
+              "string/truncateString"
             ]
           },
           {
@@ -46,39 +104,14 @@
             ]
           }
         ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "GitHub",
+          "href": "https://github.com/koji/ichigyou",
           "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
         }
       ]
     }
@@ -102,21 +135,21 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/0xkoji",
+      "github": "https://github.com/koji/ichigyou",
+      "linkedin": "https://www.linkedin.com/in/kojikanao/"
     }
   }
 }

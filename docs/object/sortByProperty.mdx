@@ -1,0 +1,30 @@
+---
+title: sortByProperty
+description: Sorts an array of objects based on a specified property.
+---
+
+## Signature
+
+```typescript path=null start=null
+sortByProperty<T extends { [key: string]: string | number }>(
+  arr: T[],
+  prop: string,
+): T[]
+```
+
+## Type Parameters
+
+- **T** extends `{ [key: string]: string | number }` - The type of the objects in the array.
+
+## Parameters
+
+- **arr**: `T[]` - The array to sort.
+- **prop**: `string` - The property to sort by.
+
+## Returns
+
+`T[]` - The sorted array.
+
+## Source
+
+Defined in [object.ts:31](https://github.com/koji/ichigyou/blob/main/src/object.ts#L31)

@@ -1,0 +1,30 @@
+---
+title: hasProperty
+description: Checks if the specified property is an own property of the given object.
+---
+
+## Signature
+
+```typescript path=null start=null
+hasProperty<T extends string | number | symbol>(
+  obj: Record<string, unknown>,
+  prop: T,
+): boolean
+```
+
+## Type Parameters
+
+- **T** extends `string | number | symbol` - The generic type parameter representing the property keys.
+
+## Parameters
+
+- **obj**: `Record<string, unknown>` - The object to check against.
+- **prop**: `T` - The property to check for in the object.
+
+## Returns
+
+`boolean` - Returns `true` if the property is an own property of the object, otherwise `false`.
+
+## Source
+
+Defined in [object.ts:10](https://github.com/koji/ichigyou/blob/main/src/object.ts#L10)
