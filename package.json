@@ -5,7 +5,7 @@
   "scripts": {
     "build": "vite build && tsc",
     "test": "vitest",
-    "doc": "typedoc --entryPointStrategy expand ./src --exclude **/*.test.ts",
+    "doc": "typedoc --out dist --entryPointStrategy expand ./src --exclude \"**/*.test.ts\"",
     "publish-jsr": "npx jsr publish",
     "mint:dev": "cd docs && mint dev"
   },
@@ -34,7 +34,7 @@
   ],
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "typedoc": "^0.25.13",
+    "typedoc": "^0.28.14",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
     "vitest": "2.0.1"
