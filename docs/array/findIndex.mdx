@@ -1,0 +1,36 @@
+---
+title: findIndex
+description: Finds the index of a given element in an array.
+---
+
+## Signature
+
+```typescript path=null start=null
+findIndex<T>(arr: T[], element: T): number
+```
+
+## Type Parameters
+
+- **T**
+
+## Parameters
+
+- **arr**: `T[]` - The array in which to find the element.
+- **element**: `T` - The element to find.
+
+## Returns
+
+`number` - The index of the element in the array, or -1 if the element is not found.
+
+## Example
+
+```typescript path=null start=null
+const arr = [1, 2, 3, 4, 5]
+const element = 3
+const index = findIndex(arr, element)
+console.log(index) // 2
+```
+
+## Source
+
+Defined in [array.ts:53](https://github.com/koji/ichigyou/blob/main/src/array.ts#L53)

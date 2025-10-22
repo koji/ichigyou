@@ -1,0 +1,89 @@
+---
+title: "Quickstart"
+description: "Get started with ichigyou - a collection of one-liner functions in TypeScript"
+---
+
+## About ichigyou
+
+`ichigyou (一行 いちぎょう)` is a collection of one-liner functions in TypeScript.
+
+**54 functions** across 5 categories:
+- String
+- Array
+- Number
+- Object
+- Other
+
+## Installation
+
+Install ichigyou using your preferred package manager:
+
+<CodeGroup>
+
+```bash npm
+npm i ichigyou
+```
+
+```bash yarn
+yarn add ichigyou
+```
+
+```bash pnpm
+pnpm i ichigyou
+```
+
+</CodeGroup>
+
+## Quick Example
+
+Here's a simple example of using ichigyou functions:
+
+```typescript
+import { reverseString, sum, hasProperty } from 'ichigyou';
+
+// String operations
+const reversed = reverseString('hello');
+console.log(reversed); // 'olleh'
+
+// Array/Number operations
+const total = sum([1, 2, 3, 4, 5]);
+console.log(total); // 15
+
+// Object operations
+const obj = { name: 'John', age: 30 };
+console.log(hasProperty(obj, 'name')); // true
+```
+
+## Explore Functions
+
+Browse through our comprehensive function library:
+
+<CardGroup cols={2}>
+
+<Card title="String Functions" icon="text" href="/string/reverseString">
+  19 string manipulation functions including reverseString, isValidEmail, and more.
+</Card>
+
+<Card title="Array Functions" icon="list" href="/array/first">
+  14 array utility functions like first, last, removeDuplicated, and more.
+</Card>
+
+<Card title="Number Functions" icon="calculator" href="/number/sum">
+  10+ number operations including sum, average, factorial, and more.
+</Card>
+
+<Card title="Object Functions" icon="cube" href="/object/hasProperty">
+  Object utilities like hasProperty, isEmptyObject, and sortByProperty.
+</Card>
+
+</CardGroup>
+
+## Documentation
+
+For full API documentation with detailed examples, visit:
+- [TSDoc Documentation](https://koji.github.io/ichigyou/index.html)
+- [GitHub Repository](https://github.com/koji/ichigyou)
+
+<Note>
+  All functions are written as one-liners in TypeScript, making them lightweight and easy to understand.
+</Note>
