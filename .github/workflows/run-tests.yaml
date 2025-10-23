@@ -16,13 +16,13 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
 
-      - name: Install pnpm
-        run: npm -g install pnpm
+      - name: Install bun
+        run: curl -fsSL https://bun.sh/install | bash
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Run Vitest
-        run: pnpm run test
+        run: bun run test
