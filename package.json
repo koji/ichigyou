@@ -26,17 +26,24 @@
     "npm",
     "pnpm",
     "yarn",
+    "bun",
+    "javascript",
+    "typescript",
     "one liner",
     "util function",
-    "typescript",
+    "utils",
     "vite",
-    "vitest"
+    "vitest",
+    "TSDoc",
+    "JSDoc",
+    "github",
+    "mintlify"
   ],
   "devDependencies": {
     "@types/node": "^22.10.2",
     "typedoc": "^0.28.14",
     "typescript": "^5.7.2",
-    "vite": "^5.4.11",
+    "vite": "^7.1.11",
     "vitest": "2.0.1"
   },
   "exports": {
