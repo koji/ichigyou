@@ -13,16 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      # Replace setup-node and the manual curl install with this
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: '18'
-
-      - name: Install pnpm
-        run: npm -g install pnpm
+          bun-version: 'latest'
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Run Vitest
-        run: pnpm run test
+        run: bun run test
