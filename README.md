@@ -7,6 +7,7 @@
 `ichigyo(1行)` is a collection of one-liner functions in typescript
 
 54 functions
+
 - string
 - array
 - number
@@ -29,6 +30,9 @@ yarn add ichigyou
 
 # pnpm
 pnpm i ichigyou
+
+# bun
+bun install ichigyou
 
 ```
 
