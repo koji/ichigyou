@@ -13,14 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
+      # Replace setup-node and the manual curl install with this
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        # You can specify a version if needed, e.g.:
+        # with:
+        #   bun-version: 1.1.10
 
-      - name: Install bun
-        run: curl -fsSL https://bun.sh/install | bash
-
+      # This step will now work correctly
       - name: Install dependencies
         run: bun install
 
