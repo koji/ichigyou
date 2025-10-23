@@ -9,6 +9,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    # Add this permissions block
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,14 +22,17 @@ jobs:
         with:
           bun-version: 'latest'
 
+      # Add this step to install dependencies like 'typedoc'
       - name: Install dependencies
         run: bun install
 
+      # This step will now work
       - name: Build TSDoc
         run: bun run doc
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          # This should be secrets.GITHUB_TOKEN unless you have a specific reason
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
