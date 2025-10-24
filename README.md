@@ -111,8 +111,8 @@ standardDeviation(arr: number[]): number
 
 ## 📖 Documentation
 
-Full API documentation with detailed examples is available at:
-👉 **[https://koji.github.io/ichigyou/index.html](https://koji.github.io/ichigyou/index.html)**　　
+Full API documentation with detailed examples is available at:  
+👉 **[https://koji.github.io/ichigyou/index.html](https://koji.github.io/ichigyou/index.html)**  
 👉 **[mintlify document](https://kk-83bff226.mintlify.app/)**
 
 ## 🤝 Contributing
